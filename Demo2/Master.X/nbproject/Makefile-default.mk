@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/slave1.c mcc_generated_files/reset.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c /Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/${IMAGE_TYPE}/Slave.s 
+SOURCEFILES_QUOTED_IF_SPACED=master_API/uart1.c master_API/uart_printf.c mcc_generated_files/slave1.c mcc_generated_files/reset.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c master_API/adc1.c master_API/stepper_interface.c mcc_generated_files/ext_int.c master_API/pwm_interface.c mcc_generated_files/pwm.c master_API/init_master_api.c /Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/${IMAGE_TYPE}/Slave.s 
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/slave1.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Slave.o 
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/slave1.o.d ${OBJECTDIR}/mcc_generated_files/reset.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/master_API/uart1.o ${OBJECTDIR}/master_API/uart_printf.o ${OBJECTDIR}/mcc_generated_files/slave1.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/master_API/adc1.o ${OBJECTDIR}/master_API/stepper_interface.o ${OBJECTDIR}/mcc_generated_files/ext_int.o ${OBJECTDIR}/master_API/pwm_interface.o ${OBJECTDIR}/mcc_generated_files/pwm.o ${OBJECTDIR}/master_API/init_master_api.o ${OBJECTDIR}/Slave.o 
+POSSIBLE_DEPFILES=${OBJECTDIR}/master_API/uart1.o.d ${OBJECTDIR}/master_API/uart_printf.o.d ${OBJECTDIR}/mcc_generated_files/slave1.o.d ${OBJECTDIR}/mcc_generated_files/reset.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/master_API/adc1.o.d ${OBJECTDIR}/master_API/stepper_interface.o.d ${OBJECTDIR}/mcc_generated_files/ext_int.o.d ${OBJECTDIR}/master_API/pwm_interface.o.d ${OBJECTDIR}/mcc_generated_files/pwm.o.d ${OBJECTDIR}/master_API/init_master_api.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/slave1.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Slave.o 
+OBJECTFILES=${OBJECTDIR}/master_API/uart1.o ${OBJECTDIR}/master_API/uart_printf.o ${OBJECTDIR}/mcc_generated_files/slave1.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/master_API/adc1.o ${OBJECTDIR}/master_API/stepper_interface.o ${OBJECTDIR}/mcc_generated_files/ext_int.o ${OBJECTDIR}/master_API/pwm_interface.o ${OBJECTDIR}/mcc_generated_files/pwm.o ${OBJECTDIR}/master_API/init_master_api.o ${OBJECTDIR}/Slave.o 
 
 # Source Files
-SOURCEFILES=mcc_generated_files/slave1.c mcc_generated_files/reset.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c /Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/${IMAGE_TYPE}/Slave.s 
+SOURCEFILES=master_API/uart1.c master_API/uart_printf.c mcc_generated_files/slave1.c mcc_generated_files/reset.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c master_API/adc1.c master_API/stepper_interface.c mcc_generated_files/ext_int.c master_API/pwm_interface.c mcc_generated_files/pwm.c master_API/init_master_api.c /Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/${IMAGE_TYPE}/Slave.s 
 
 
 CFLAGS=
@@ -94,6 +94,20 @@ MP_LINKER_FILE_OPTION=,--script=p33CH128MP508.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/master_API/uart1.o: master_API/uart1.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/uart1.o.d 
+	@${RM} ${OBJECTDIR}/master_API/uart1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/uart1.c  -o ${OBJECTDIR}/master_API/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/uart1.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/uart1.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/uart_printf.o: master_API/uart_printf.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/uart_printf.o.d 
+	@${RM} ${OBJECTDIR}/master_API/uart_printf.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/uart_printf.c  -o ${OBJECTDIR}/master_API/uart_printf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/uart_printf.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/uart_printf.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 ${OBJECTDIR}/mcc_generated_files/slave1.o: mcc_generated_files/slave1.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/slave1.o.d 
@@ -157,7 +171,63 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/master_API/adc1.o: master_API/adc1.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/adc1.o.d 
+	@${RM} ${OBJECTDIR}/master_API/adc1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/adc1.c  -o ${OBJECTDIR}/master_API/adc1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/adc1.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/adc1.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/stepper_interface.o: master_API/stepper_interface.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/stepper_interface.o.d 
+	@${RM} ${OBJECTDIR}/master_API/stepper_interface.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/stepper_interface.c  -o ${OBJECTDIR}/master_API/stepper_interface.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/stepper_interface.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/stepper_interface.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/mcc_generated_files/ext_int.o: mcc_generated_files/ext_int.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/ext_int.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/ext_int.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/ext_int.c  -o ${OBJECTDIR}/mcc_generated_files/ext_int.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcc_generated_files/ext_int.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/mcc_generated_files/ext_int.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/pwm_interface.o: master_API/pwm_interface.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/pwm_interface.o.d 
+	@${RM} ${OBJECTDIR}/master_API/pwm_interface.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/pwm_interface.c  -o ${OBJECTDIR}/master_API/pwm_interface.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/pwm_interface.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/pwm_interface.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/mcc_generated_files/pwm.o: mcc_generated_files/pwm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/pwm.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/pwm.c  -o ${OBJECTDIR}/mcc_generated_files/pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcc_generated_files/pwm.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/mcc_generated_files/pwm.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/init_master_api.o: master_API/init_master_api.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/init_master_api.o.d 
+	@${RM} ${OBJECTDIR}/master_API/init_master_api.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/init_master_api.c  -o ${OBJECTDIR}/master_API/init_master_api.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/init_master_api.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/init_master_api.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
+${OBJECTDIR}/master_API/uart1.o: master_API/uart1.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/uart1.o.d 
+	@${RM} ${OBJECTDIR}/master_API/uart1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/uart1.c  -o ${OBJECTDIR}/master_API/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/uart1.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/uart1.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/uart_printf.o: master_API/uart_printf.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/uart_printf.o.d 
+	@${RM} ${OBJECTDIR}/master_API/uart_printf.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/uart_printf.c  -o ${OBJECTDIR}/master_API/uart_printf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/uart_printf.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/uart_printf.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 ${OBJECTDIR}/mcc_generated_files/slave1.o: mcc_generated_files/slave1.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/slave1.o.d 
@@ -220,6 +290,48 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/adc1.o: master_API/adc1.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/adc1.o.d 
+	@${RM} ${OBJECTDIR}/master_API/adc1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/adc1.c  -o ${OBJECTDIR}/master_API/adc1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/adc1.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/adc1.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/stepper_interface.o: master_API/stepper_interface.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/stepper_interface.o.d 
+	@${RM} ${OBJECTDIR}/master_API/stepper_interface.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/stepper_interface.c  -o ${OBJECTDIR}/master_API/stepper_interface.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/stepper_interface.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/stepper_interface.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/mcc_generated_files/ext_int.o: mcc_generated_files/ext_int.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/ext_int.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/ext_int.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/ext_int.c  -o ${OBJECTDIR}/mcc_generated_files/ext_int.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcc_generated_files/ext_int.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/mcc_generated_files/ext_int.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/pwm_interface.o: master_API/pwm_interface.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/pwm_interface.o.d 
+	@${RM} ${OBJECTDIR}/master_API/pwm_interface.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/pwm_interface.c  -o ${OBJECTDIR}/master_API/pwm_interface.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/pwm_interface.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/pwm_interface.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/mcc_generated_files/pwm.o: mcc_generated_files/pwm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/pwm.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/pwm.c  -o ${OBJECTDIR}/mcc_generated_files/pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcc_generated_files/pwm.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/mcc_generated_files/pwm.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/master_API/init_master_api.o: master_API/init_master_api.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/master_API" 
+	@${RM} ${OBJECTDIR}/master_API/init_master_api.o.d 
+	@${RM} ${OBJECTDIR}/master_API/init_master_api.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  master_API/init_master_api.c  -o ${OBJECTDIR}/master_API/init_master_api.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/master_API/init_master_api.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -I"/Users/victorsira/MPLABXProjects/Demo2/Slave.X/dist/default/production"  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/master_API/init_master_api.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

@@ -52,4 +52,7 @@
 */
 void INTERRUPT_Initialize (void)
 {
+    //    INT0I: External Interrupt 0
+    //    Priority: 1
+        IPC0bits.INT0IP = 1;
 }

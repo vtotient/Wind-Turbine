@@ -113,10 +113,10 @@
 #pragma config CPRA1 = MSTR    //Pin RA1 Ownership Bits->Master core owns pin.
 #pragma config CPRA2 = MSTR    //Pin RA2 Ownership Bits->Master core owns pin.
 #pragma config CPRA3 = MSTR    //Pin RA3 Ownership Bits->Master core owns pin.
-#pragma config CPRA4 = MSTR    //Pin RA4 Ownership Bits->Master core owns pin.
+#pragma config CPRA4 = SLV1    //Pin RA4 Ownership Bits->Slave 1 core owns pin.
 
 // FCFGPRB0
-#pragma config CPRB0 = MSTR    //Pin RB0 Ownership Bits->Master core owns pin.
+#pragma config CPRB0 = SLV1    //Pin RB0 Ownership Bits->Slave 1 core owns pin.
 #pragma config CPRB1 = MSTR    //Pin RB1 Ownership Bits->Master core owns pin.
 #pragma config CPRB2 = MSTR    //Pin RB2 Ownership Bits->Master core owns pin.
 #pragma config CPRB3 = MSTR    //Pin RB3 Ownership Bits->Master core owns pin.
@@ -134,18 +134,18 @@
 #pragma config CPRB15 = MSTR    //Pin RB15 Ownership Bits->Master core owns pin.
 
 // FCFGPRC0
-#pragma config CPRC0 = MSTR    //Pin RC0 Ownership Bits->Master core owns pin.
+#pragma config CPRC0 = SLV1    //Pin RC0 Ownership Bits->Slave 1 core owns pin.
 #pragma config CPRC1 = MSTR    //Pin RC1 Ownership Bits->Master core owns pin.
 #pragma config CPRC2 = MSTR    //Pin RC2 Ownership Bits->Master core owns pin.
-#pragma config CPRC3 = MSTR    //Pin RC3 Ownership Bits->Master core owns pin.
-#pragma config CPRC4 = SLV1    //Pin RC4 Ownership Bits->Slave 1 core owns pin.
+#pragma config CPRC3 = SLV1    //Pin RC3 Ownership Bits->Slave 1 core owns pin.
+#pragma config CPRC4 = MSTR    //Pin RC4 Ownership Bits->Master core owns pin.
 #pragma config CPRC5 = SLV1    //Pin RC5 Ownership Bits->Slave 1 core owns pin.
-#pragma config CPRC6 = MSTR    //Pin RC6 Ownership Bits->Master core owns pin.
+#pragma config CPRC6 = SLV1    //Pin RC6 Ownership Bits->Slave 1 core owns pin.
 #pragma config CPRC7 = MSTR    //Pin RC7 Ownership Bits->Master core owns pin.
 #pragma config CPRC8 = MSTR    //Pin RC8 Ownership Bits->Master core owns pin.
 #pragma config CPRC9 = MSTR    //Pin RC9 Ownership Bits->Master core owns pin.
 #pragma config CPRC10 = SLV1    //Pin RC10 Ownership Bits->Slave 1 core owns pin.
-#pragma config CPRC11 = SLV1    //Pin RC11 Ownership Bits->Slave 1 core owns pin.
+#pragma config CPRC11 = MSTR    //Pin RC11 Ownership Bits->Master core owns pin. UART
 #pragma config CPRC12 = MSTR    //Pin RC12 Ownership Bits->Master core owns pin.
 #pragma config CPRC13 = MSTR    //Pin RC13 Ownership Bits->Master core owns pin.
 #pragma config CPRC14 = SLV1    //Pin RC14 Ownership Bits->Slave 1 core owns pin.
@@ -156,7 +156,7 @@
 #pragma config CPRD1 = SLV1    //Pin RD1 Ownership Bits->Slave 1 core owns pin.
 #pragma config CPRD2 = SLV1    //Pin RD2 Ownership Bits->Slave 1 core owns pin.
 #pragma config CPRD3 = SLV1    //Pin RD3 Ownership Bits->Slave 1 core owns pin.
-#pragma config CPRD4 = SLV1    //Pin RD4 Ownership Bits->Slave 1 core owns pin.
+#pragma config CPRD4 = MSTR    //Pin RD4 Ownership Bits->Master core owns pin.
 #pragma config CPRD5 = SLV1    //Pin RD5 Ownership Bits->Slave 1 core owns pin.
 #pragma config CPRD6 = SLV1    //Pin RD6 Ownership Bits->Slave 1 core owns pin.
 #pragma config CPRD7 = SLV1    //Pin RD7 Ownership Bits->Slave 1 core owns pin.
@@ -170,7 +170,7 @@
 #pragma config CPRD15 = MSTR    //Pin RD15 Ownership Bits->Master core owns pin.
 
 // FCFGPRE0
-#pragma config CPRE0 = SLV1    //Pin RE0 Ownership Bits->Slave 1 core owns pin.
+#pragma config CPRE0 = MSTR    //Pin RE0 Ownership Bits->Master core owns pin.
 #pragma config CPRE1 = MSTR    //Pin RE1 Ownership Bits->Master core owns pin.
 #pragma config CPRE2 = MSTR    //Pin RE2 Ownership Bits->Master core owns pin.
 #pragma config CPRE3 = MSTR    //Pin RE3 Ownership Bits->Master core owns pin.

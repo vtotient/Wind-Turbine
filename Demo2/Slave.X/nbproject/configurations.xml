@@ -27,6 +27,12 @@
     </logicalFolder>
     <logicalFolder name="slave_API" displayName="slave_API" projectFiles="true">
       <itemPath>slave_API/pwm_interface.c</itemPath>
+      <itemPath>slave_API/pwm_interface.h</itemPath>
+      <itemPath>slave_API/slave_API.h</itemPath>
+      <itemPath>slave_API/adc1.c</itemPath>
+      <itemPath>slave_API/adc1.h</itemPath>
+      <itemPath>slave_API/mppt.c</itemPath>
+      <itemPath>slave_API/mppt.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"

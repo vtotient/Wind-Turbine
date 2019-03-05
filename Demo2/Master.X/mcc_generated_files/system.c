@@ -46,10 +46,14 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
+#include "ext_int.h"
+#include "interrupt_manager.h"
+#include "traps.h"
 #include "slave_typedef.h"
 #include "slave1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "pwm.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -57,8 +61,13 @@ void SYSTEM_Initialize(void)
     CLOCK_Initialize();
     INTERRUPT_Initialize();
     SLAVE1_Initialize();
+    EXT_INT_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
+
+    /* Set PPS up for the UART->USB pins */
+    _RP59R = 0x01;
+    _U1RXR = 58;
 }
 
 /**

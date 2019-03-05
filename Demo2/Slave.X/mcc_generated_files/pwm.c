@@ -148,8 +148,8 @@ void PWM_Initialize (void)
     PG1IOCONH = 0x0C;
     // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH enabled; CAPSRC Software; POLH Active-high; 
     PG2IOCONH = 0x0C;
-    // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH enabled; CAPSRC Software; POLH Active-high; 
-    PG3IOCONH = 0x0C;
+    // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH disabled; CAPSRC Software; POLH Active-high; 
+    PG3IOCONH = 0x04;
     // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH enabled; CAPSRC Software; POLH Active-high; 
     PG4IOCONH = 0x0C;
     // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH enabled; CAPSRC Software; POLH Active-high; 
@@ -158,8 +158,8 @@ void PWM_Initialize (void)
     PG6IOCONH = 0x0C;
     // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH enabled; CAPSRC Software; POLH Active-high; 
     PG7IOCONH = 0x0C;
-    // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH enabled; CAPSRC Software; POLH Active-high; 
-    PG8IOCONH = 0x0C;
+    // PENL enabled; DTCMPSEL PCI Sync Logic; PMOD Complementary; POLL Active-high; PENH disabled; CAPSRC Software; POLH Active-high; 
+    PG8IOCONH = 0x04;
     // UPDTRG Manual; ADTR1PS 1:1; PGTRGSEL EOC event; ADTR1EN3 disabled; ADTR1EN1 disabled; ADTR1EN2 disabled; 
     PG1EVTL = 0x00;
     // UPDTRG Manual; ADTR1PS 1:1; PGTRGSEL EOC event; ADTR1EN3 disabled; ADTR1EN1 disabled; ADTR1EN2 disabled; 

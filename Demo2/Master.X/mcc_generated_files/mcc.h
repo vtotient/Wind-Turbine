@@ -54,10 +54,12 @@
 #include <stdbool.h>
 #include "slave_typedef.h"
 #include "slave1.h"
-#include "watchdog.h"
 #include "reset.h"
+#include "watchdog.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "ext_int.h"
+#include "pwm.h"
 
 #ifndef _XTAL_FREQ
 #define _XTAL_FREQ  8000000UL

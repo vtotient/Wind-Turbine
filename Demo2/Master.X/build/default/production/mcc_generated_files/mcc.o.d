@@ -11,4 +11,6 @@ mcc_generated_files/pin_manager.h  \
 mcc_generated_files/slave1.h  \
  mcc_generated_files/watchdog.h  \
 mcc_generated_files/interrupt_manager.h  \
- mcc_generated_files/traps.h 
+ mcc_generated_files/traps.h  \
+mcc_generated_files/ext_int.h  \
+ mcc_generated_files/pwm.h 
