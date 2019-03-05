@@ -8,10 +8,10 @@
 #include "pwm_interface.h"
 #include "adc1.h"
 
-#define PERTUBATION 0x0002
+#define PERTUBATION 0x0004
 #define INIT_PHASE	0x0000
 #define INIT_PER	0x006E
-#define INIT_DC		0x0000
+#define INIT_DC		0x0037
 #define MAX_DC_VAL 	0x0062
 #define MIN_DC_VAL  0x0000
 #define KA			0x0001

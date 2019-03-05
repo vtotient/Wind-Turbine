@@ -163,12 +163,12 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x113a          0x19d7  (6615)
 .const                      0x133a               0x10a           0x18f  (399)
-Slave_image                 0x1444              0x11d8          0x1ac4  (6852)
-.text                       0x261c               0xba6          0x1179  (4473)
-.dinit                      0x31c2                0xce           0x135  (309)
-.text                       0x3290               0x21e           0x32d  (813)
+Slave_image                 0x1444              0x1228          0x1b3c  (6972)
+.text                       0x266c               0xba6          0x1179  (4473)
+.dinit                      0x3212                0xce           0x135  (309)
+.text                       0x32e0               0x21e           0x32d  (813)
 
-                 Total "program" memory used (bytes):         0x4c05  (19461) 14%
+                 Total "program" memory used (bytes):         0x4c7d  (19581) 14%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x4000]
@@ -291,122 +291,122 @@ External Symbols in Program Memory (by address):
                   0x00127e                  ___divdi3
                   0x0012de                  ___moddi3
                   0x001444                  _Slave
-                  0x002680                  _init_stepper_interface
-                  0x002704                  _wind_sensor_calibrate
-                  0x002736                  _track_wind
-                  0x002776                  _spin_clockwise
-                  0x00278c                  _spin_counterclockwise
-                  0x0027a2                  _change_stepper_dir
-                  0x00280c                  _stop_stepper
-                  0x002834                  _start_stepper
-                  0x00285c                  _STEPCOUNT_TASK
-                  0x00288a                  _STEPCONTROL_TASK
-                  0x00289e                  _START_TASK
-                  0x002918                  _within_5
-                  0x002a2c                  _config_PWM
-                  0x002ad6                  _enable_PWM_CLK_DIV
-                  0x002b22                  _set_PWM_CLK_DIV
-                  0x002b36                  _set_stepper_freq
-                  0x002b78                  _PWM_Initialize
-                  0x002ca2                  _PWM_Tasks_Generator1
-                  0x002cba                  _PWM_Tasks_Generator2
-                  0x002cd2                  _PWM_Tasks_Generator3
-                  0x002cec                  _PWM_Tasks_Generator4
-                  0x002d06                  _PWM_Tasks_EventA
-                  0x002d20                  _PWM_Tasks_EventB
-                  0x002d3a                  _PWM_Tasks_EventC
-                  0x002d54                  _PWM_Tasks_EventD
-                  0x002d6e                  _PWM_Tasks_EventE
-                  0x002d88                  _PWM_Tasks_EventF
-                  0x002d9c                  _SLAVE1_Initialize
-                  0x002da8                  _SLAVE1_Start
-                  0x002db0                  _SLAVE1_Program
-                  0x002dc2                  _SLAVE1_InterruptRequestGenerate
-                  0x002dca                  _SLAVE1_IsInterruptRequestAcknowledged
-                  0x002de0                  _SLAVE1_InterruptRequestComplete
-                  0x002de8                  _SLAVE1_IsInterruptRequested
-                  0x002dfe                  _SLAVE1_InterruptRequestAcknowledge
-                  0x002e06                  _SLAVE1_InterruptRequestAcknowledgeComplete
-                  0x002e0e                  _SLAVE1_GetResetCause
-                  0x002e2a                  _SLAVE1_ResetCauseClear
-                  0x002e40                  _SLAVE1_SystemStatusGet
-                  0x002e86                  _SLAVE1_Read
-                  0x002ebe                  _SLAVE1_Write
-                  0x002ef8                  _SLAVE1_ProtocolAWrite
-                  0x002f30                  _SLAVE1_ProtocolBRead
-                  0x002f6a                  _ADC_ReadPercentage
-                  0x002fa0                  _ADC_Read10bit
-                  0x002fae                  _ADC_Read12bit
-                  0x003004                  _ADC_Read12bitAverage
-                  0x003050                  _ADC_ChannelEnable
-                  0x003072                  _ADC_SetConfiguration
-                  0x0030ae                  _RESET_GetCause
-                  0x0031ba                  _RESET_CauseClearAll
-                  0x003290                  _main
-                  0x003324                  _PIN_MANAGER_Initialize
-                  0x003376                  _CLOCK_Initialize
-                  0x0033ba                  _UART1_Initialize
-                  0x0033e4                  _UART1_Write
-                  0x003418                  _SYSTEM_Initialize
-                  0x003438                  _OSCILLATOR_Initialize
-                  0x003440                  _SYSTEM_GetResetCause
-                  0x003450                  _SYSTEM_ResetCauseClearAll
-                  0x003458                  _init_master_api
-                  0x003480                  _EXT_INT_Initialize
-                  0x0034a2                  _INTERRUPT_Initialize
+                  0x0026d0                  _init_stepper_interface
+                  0x002754                  _wind_sensor_calibrate
+                  0x002786                  _track_wind
+                  0x0027c6                  _spin_clockwise
+                  0x0027dc                  _spin_counterclockwise
+                  0x0027f2                  _change_stepper_dir
+                  0x00285c                  _stop_stepper
+                  0x002884                  _start_stepper
+                  0x0028ac                  _STEPCOUNT_TASK
+                  0x0028da                  _STEPCONTROL_TASK
+                  0x0028ee                  _START_TASK
+                  0x002968                  _within_5
+                  0x002a7c                  _config_PWM
+                  0x002b26                  _enable_PWM_CLK_DIV
+                  0x002b72                  _set_PWM_CLK_DIV
+                  0x002b86                  _set_stepper_freq
+                  0x002bc8                  _PWM_Initialize
+                  0x002cf2                  _PWM_Tasks_Generator1
+                  0x002d0a                  _PWM_Tasks_Generator2
+                  0x002d22                  _PWM_Tasks_Generator3
+                  0x002d3c                  _PWM_Tasks_Generator4
+                  0x002d56                  _PWM_Tasks_EventA
+                  0x002d70                  _PWM_Tasks_EventB
+                  0x002d8a                  _PWM_Tasks_EventC
+                  0x002da4                  _PWM_Tasks_EventD
+                  0x002dbe                  _PWM_Tasks_EventE
+                  0x002dd8                  _PWM_Tasks_EventF
+                  0x002dec                  _SLAVE1_Initialize
+                  0x002df8                  _SLAVE1_Start
+                  0x002e00                  _SLAVE1_Program
+                  0x002e12                  _SLAVE1_InterruptRequestGenerate
+                  0x002e1a                  _SLAVE1_IsInterruptRequestAcknowledged
+                  0x002e30                  _SLAVE1_InterruptRequestComplete
+                  0x002e38                  _SLAVE1_IsInterruptRequested
+                  0x002e4e                  _SLAVE1_InterruptRequestAcknowledge
+                  0x002e56                  _SLAVE1_InterruptRequestAcknowledgeComplete
+                  0x002e5e                  _SLAVE1_GetResetCause
+                  0x002e7a                  _SLAVE1_ResetCauseClear
+                  0x002e90                  _SLAVE1_SystemStatusGet
+                  0x002ed6                  _SLAVE1_Read
+                  0x002f0e                  _SLAVE1_Write
+                  0x002f48                  _SLAVE1_ProtocolAWrite
+                  0x002f80                  _SLAVE1_ProtocolBRead
+                  0x002fba                  _ADC_ReadPercentage
+                  0x002ff0                  _ADC_Read10bit
+                  0x002ffe                  _ADC_Read12bit
+                  0x003054                  _ADC_Read12bitAverage
+                  0x0030a0                  _ADC_ChannelEnable
+                  0x0030c2                  _ADC_SetConfiguration
+                  0x0030fe                  _RESET_GetCause
+                  0x00320a                  _RESET_CauseClearAll
+                  0x0032e0                  _main
+                  0x003374                  _PIN_MANAGER_Initialize
+                  0x0033c6                  _CLOCK_Initialize
+                  0x00340a                  _UART1_Initialize
+                  0x003434                  _UART1_Write
+                  0x003468                  _SYSTEM_Initialize
+                  0x003488                  _OSCILLATOR_Initialize
+                  0x003490                  _SYSTEM_GetResetCause
+                  0x0034a0                  _SYSTEM_ResetCauseClearAll
+                  0x0034a8                  _init_master_api
+                  0x0034d0                  _EXT_INT_Initialize
+                  0x0034f2                  _INTERRUPT_Initialize
                   0x015f00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x003050                  _ADC_ChannelEnable
-                  0x002fa0                  _ADC_Read10bit
-                  0x002fae                  _ADC_Read12bit
-                  0x003004                  _ADC_Read12bitAverage
-                  0x002f6a                  _ADC_ReadPercentage
-                  0x003072                  _ADC_SetConfiguration
-                  0x003376                  _CLOCK_Initialize
-                  0x003480                  _EXT_INT_Initialize
-                  0x0034a2                  _INTERRUPT_Initialize
-                  0x003438                  _OSCILLATOR_Initialize
-                  0x003324                  _PIN_MANAGER_Initialize
-                  0x002b78                  _PWM_Initialize
-                  0x002d06                  _PWM_Tasks_EventA
-                  0x002d20                  _PWM_Tasks_EventB
-                  0x002d3a                  _PWM_Tasks_EventC
-                  0x002d54                  _PWM_Tasks_EventD
-                  0x002d6e                  _PWM_Tasks_EventE
-                  0x002d88                  _PWM_Tasks_EventF
-                  0x002ca2                  _PWM_Tasks_Generator1
-                  0x002cba                  _PWM_Tasks_Generator2
-                  0x002cd2                  _PWM_Tasks_Generator3
-                  0x002cec                  _PWM_Tasks_Generator4
-                  0x0031ba                  _RESET_CauseClearAll
-                  0x0030ae                  _RESET_GetCause
-                  0x002e0e                  _SLAVE1_GetResetCause
-                  0x002d9c                  _SLAVE1_Initialize
-                  0x002dfe                  _SLAVE1_InterruptRequestAcknowledge
-                  0x002e06                  _SLAVE1_InterruptRequestAcknowledgeComplete
-                  0x002de0                  _SLAVE1_InterruptRequestComplete
-                  0x002dc2                  _SLAVE1_InterruptRequestGenerate
-                  0x002dca                  _SLAVE1_IsInterruptRequestAcknowledged
-                  0x002de8                  _SLAVE1_IsInterruptRequested
-                  0x002db0                  _SLAVE1_Program
-                  0x002ef8                  _SLAVE1_ProtocolAWrite
-                  0x002f30                  _SLAVE1_ProtocolBRead
-                  0x002e86                  _SLAVE1_Read
-                  0x002e2a                  _SLAVE1_ResetCauseClear
-                  0x002da8                  _SLAVE1_Start
-                  0x002e40                  _SLAVE1_SystemStatusGet
-                  0x002ebe                  _SLAVE1_Write
-                  0x00289e                  _START_TASK
-                  0x00288a                  _STEPCONTROL_TASK
-                  0x00285c                  _STEPCOUNT_TASK
-                  0x003440                  _SYSTEM_GetResetCause
-                  0x003418                  _SYSTEM_Initialize
-                  0x003450                  _SYSTEM_ResetCauseClearAll
+                  0x0030a0                  _ADC_ChannelEnable
+                  0x002ff0                  _ADC_Read10bit
+                  0x002ffe                  _ADC_Read12bit
+                  0x003054                  _ADC_Read12bitAverage
+                  0x002fba                  _ADC_ReadPercentage
+                  0x0030c2                  _ADC_SetConfiguration
+                  0x0033c6                  _CLOCK_Initialize
+                  0x0034d0                  _EXT_INT_Initialize
+                  0x0034f2                  _INTERRUPT_Initialize
+                  0x003488                  _OSCILLATOR_Initialize
+                  0x003374                  _PIN_MANAGER_Initialize
+                  0x002bc8                  _PWM_Initialize
+                  0x002d56                  _PWM_Tasks_EventA
+                  0x002d70                  _PWM_Tasks_EventB
+                  0x002d8a                  _PWM_Tasks_EventC
+                  0x002da4                  _PWM_Tasks_EventD
+                  0x002dbe                  _PWM_Tasks_EventE
+                  0x002dd8                  _PWM_Tasks_EventF
+                  0x002cf2                  _PWM_Tasks_Generator1
+                  0x002d0a                  _PWM_Tasks_Generator2
+                  0x002d22                  _PWM_Tasks_Generator3
+                  0x002d3c                  _PWM_Tasks_Generator4
+                  0x00320a                  _RESET_CauseClearAll
+                  0x0030fe                  _RESET_GetCause
+                  0x002e5e                  _SLAVE1_GetResetCause
+                  0x002dec                  _SLAVE1_Initialize
+                  0x002e4e                  _SLAVE1_InterruptRequestAcknowledge
+                  0x002e56                  _SLAVE1_InterruptRequestAcknowledgeComplete
+                  0x002e30                  _SLAVE1_InterruptRequestComplete
+                  0x002e12                  _SLAVE1_InterruptRequestGenerate
+                  0x002e1a                  _SLAVE1_IsInterruptRequestAcknowledged
+                  0x002e38                  _SLAVE1_IsInterruptRequested
+                  0x002e00                  _SLAVE1_Program
+                  0x002f48                  _SLAVE1_ProtocolAWrite
+                  0x002f80                  _SLAVE1_ProtocolBRead
+                  0x002ed6                  _SLAVE1_Read
+                  0x002e7a                  _SLAVE1_ResetCauseClear
+                  0x002df8                  _SLAVE1_Start
+                  0x002e90                  _SLAVE1_SystemStatusGet
+                  0x002f0e                  _SLAVE1_Write
+                  0x0028ee                  _START_TASK
+                  0x0028da                  _STEPCONTROL_TASK
+                  0x0028ac                  _STEPCOUNT_TASK
+                  0x003490                  _SYSTEM_GetResetCause
+                  0x003468                  _SYSTEM_Initialize
+                  0x0034a0                  _SYSTEM_ResetCauseClearAll
                   0x001444                  _Slave
-                  0x0033ba                  _UART1_Initialize
-                  0x0033e4                  _UART1_Write
+                  0x00340a                  _UART1_Initialize
+                  0x003434                  _UART1_Write
                   0x00036e                  __AddressError
                   0x000770                  __Atexit
                   0x0006ac                  __Closreg
@@ -445,33 +445,33 @@ External Symbols in Program Memory (by name):
                   0x000200                  __resetPRI
                   0x000338                  __start_slave
                   0x000344                  __stop_slave
-                  0x0027a2                  _change_stepper_dir
-                  0x002a2c                  _config_PWM
-                  0x002ad6                  _enable_PWM_CLK_DIV
+                  0x0027f2                  _change_stepper_dir
+                  0x002a7c                  _config_PWM
+                  0x002b26                  _enable_PWM_CLK_DIV
                   0x0006be                  _fclose
                   0x00049a                  _fputc
                   0x00055c                  _fputs
                   0x000b3c                  _free
                   0x000ba0                  _fwrite
-                  0x003458                  _init_master_api
-                  0x002680                  _init_stepper_interface
-                  0x003290                  _main
+                  0x0034a8                  _init_master_api
+                  0x0026d0                  _init_stepper_interface
+                  0x0032e0                  _main
                   0x000cae                  _malloc
                   0x000d02                  _memchr
                   0x0005ec                  _memcpy
                   0x000484                  _puts
-                  0x002b22                  _set_PWM_CLK_DIV
-                  0x002b36                  _set_stepper_freq
-                  0x002776                  _spin_clockwise
-                  0x00278c                  _spin_counterclockwise
-                  0x002834                  _start_stepper
-                  0x00280c                  _stop_stepper
+                  0x002b72                  _set_PWM_CLK_DIV
+                  0x002b86                  _set_stepper_freq
+                  0x0027c6                  _spin_clockwise
+                  0x0027dc                  _spin_counterclockwise
+                  0x002884                  _start_stepper
+                  0x00285c                  _stop_stepper
                   0x000d16                  _strchr
                   0x0005fa                  _strlen
                   0x000606                  _strrchr
-                  0x002736                  _track_wind
-                  0x002704                  _wind_sensor_calibrate
-                  0x002918                  _within_5
+                  0x002786                  _track_wind
+                  0x002754                  _wind_sensor_calibrate
+                  0x002968                  _within_5
                   0x000416                  _write
                   0x000750                  fclose.CH_elo:_closeall
                   0x000788                  printf_cdnopuxX.CHeo:_prout
@@ -4309,106 +4309,106 @@ __c30_signature
 .const              0x933a        0x10a load address 0x00133a  
  .const             0x933a        0x10a build/default/production/main.o
 
-Slave_image       0x001444       0x11d8
- Slave_image      0x001444       0x11d8 build/default/production/Slave.o
+Slave_image       0x001444       0x1228
+ Slave_image      0x001444       0x1228 build/default/production/Slave.o
                   0x001444                  _Slave
 
-.text             0x00261c        0xba6
- .text            0x00261c        0x32a build/default/production/master_API/stepper_interface.o
-                  0x002680                  _init_stepper_interface
-                  0x002704                  _wind_sensor_calibrate
-                  0x002736                  _track_wind
-                  0x002776                  _spin_clockwise
-                  0x00278c                  _spin_counterclockwise
-                  0x0027a2                  _change_stepper_dir
-                  0x00280c                  _stop_stepper
-                  0x002834                  _start_stepper
-                  0x00285c                  _STEPCOUNT_TASK
-                  0x00288a                  _STEPCONTROL_TASK
-                  0x00289e                  _START_TASK
-                  0x002918                  _within_5
- .text            0x002946        0x232 build/default/production/master_API/pwm_interface.o
-                  0x002a2c                  _config_PWM
-                  0x002ad6                  _enable_PWM_CLK_DIV
-                  0x002b22                  _set_PWM_CLK_DIV
-                  0x002b36                  _set_stepper_freq
- .text            0x002b78        0x224 build/default/production/mcc_generated_files/pwm.o
-                  0x002b78                  _PWM_Initialize
-                  0x002c9c                  _PWM_Generator1CallBack
-                  0x002ca2                  _PWM_Tasks_Generator1
-                  0x002cb4                  _PWM_Generator2CallBack
-                  0x002cba                  _PWM_Tasks_Generator2
-                  0x002ccc                  _PWM_Generator3CallBack
-                  0x002cd2                  _PWM_Tasks_Generator3
-                  0x002ce6                  _PWM_Generator4CallBack
-                  0x002cec                  _PWM_Tasks_Generator4
-                  0x002d00                  _PWM_EventACallBack
-                  0x002d06                  _PWM_Tasks_EventA
-                  0x002d1a                  _PWM_EventBCallBack
-                  0x002d20                  _PWM_Tasks_EventB
-                  0x002d34                  _PWM_EventCCallBack
-                  0x002d3a                  _PWM_Tasks_EventC
-                  0x002d4e                  _PWM_EventDCallBack
-                  0x002d54                  _PWM_Tasks_EventD
-                  0x002d68                  _PWM_EventECallBack
-                  0x002d6e                  _PWM_Tasks_EventE
-                  0x002d82                  _PWM_EventFCallBack
-                  0x002d88                  _PWM_Tasks_EventF
- .text            0x002d9c        0x1ce build/default/production/mcc_generated_files/slave1.o
-                  0x002d9c                  _SLAVE1_Initialize
-                  0x002da8                  _SLAVE1_Start
-                  0x002db0                  _SLAVE1_Program
-                  0x002dc2                  _SLAVE1_InterruptRequestGenerate
-                  0x002dca                  _SLAVE1_IsInterruptRequestAcknowledged
-                  0x002de0                  _SLAVE1_InterruptRequestComplete
-                  0x002de8                  _SLAVE1_IsInterruptRequested
-                  0x002dfe                  _SLAVE1_InterruptRequestAcknowledge
-                  0x002e06                  _SLAVE1_InterruptRequestAcknowledgeComplete
-                  0x002e0e                  _SLAVE1_GetResetCause
-                  0x002e2a                  _SLAVE1_ResetCauseClear
-                  0x002e40                  _SLAVE1_SystemStatusGet
-                  0x002e86                  _SLAVE1_Read
-                  0x002ebe                  _SLAVE1_Write
-                  0x002ef8                  _SLAVE1_ProtocolAWrite
-                  0x002f30                  _SLAVE1_ProtocolBRead
- .text            0x002f6a        0x144 build/default/production/master_API/adc1.o
-                  0x002f6a                  _ADC_ReadPercentage
-                  0x002fa0                  _ADC_Read10bit
-                  0x002fae                  _ADC_Read12bit
-                  0x003004                  _ADC_Read12bitAverage
-                  0x003050                  _ADC_ChannelEnable
-                  0x003072                  _ADC_SetConfiguration
- .text            0x0030ae        0x114 build/default/production/mcc_generated_files/reset.o
-                  0x0030ae                  _RESET_GetCause
-                  0x0030b6                  _RESET_CauseHandler
-                  0x0031ba                  _RESET_CauseClearAll
+.text             0x00266c        0xba6
+ .text            0x00266c        0x32a build/default/production/master_API/stepper_interface.o
+                  0x0026d0                  _init_stepper_interface
+                  0x002754                  _wind_sensor_calibrate
+                  0x002786                  _track_wind
+                  0x0027c6                  _spin_clockwise
+                  0x0027dc                  _spin_counterclockwise
+                  0x0027f2                  _change_stepper_dir
+                  0x00285c                  _stop_stepper
+                  0x002884                  _start_stepper
+                  0x0028ac                  _STEPCOUNT_TASK
+                  0x0028da                  _STEPCONTROL_TASK
+                  0x0028ee                  _START_TASK
+                  0x002968                  _within_5
+ .text            0x002996        0x232 build/default/production/master_API/pwm_interface.o
+                  0x002a7c                  _config_PWM
+                  0x002b26                  _enable_PWM_CLK_DIV
+                  0x002b72                  _set_PWM_CLK_DIV
+                  0x002b86                  _set_stepper_freq
+ .text            0x002bc8        0x224 build/default/production/mcc_generated_files/pwm.o
+                  0x002bc8                  _PWM_Initialize
+                  0x002cec                  _PWM_Generator1CallBack
+                  0x002cf2                  _PWM_Tasks_Generator1
+                  0x002d04                  _PWM_Generator2CallBack
+                  0x002d0a                  _PWM_Tasks_Generator2
+                  0x002d1c                  _PWM_Generator3CallBack
+                  0x002d22                  _PWM_Tasks_Generator3
+                  0x002d36                  _PWM_Generator4CallBack
+                  0x002d3c                  _PWM_Tasks_Generator4
+                  0x002d50                  _PWM_EventACallBack
+                  0x002d56                  _PWM_Tasks_EventA
+                  0x002d6a                  _PWM_EventBCallBack
+                  0x002d70                  _PWM_Tasks_EventB
+                  0x002d84                  _PWM_EventCCallBack
+                  0x002d8a                  _PWM_Tasks_EventC
+                  0x002d9e                  _PWM_EventDCallBack
+                  0x002da4                  _PWM_Tasks_EventD
+                  0x002db8                  _PWM_EventECallBack
+                  0x002dbe                  _PWM_Tasks_EventE
+                  0x002dd2                  _PWM_EventFCallBack
+                  0x002dd8                  _PWM_Tasks_EventF
+ .text            0x002dec        0x1ce build/default/production/mcc_generated_files/slave1.o
+                  0x002dec                  _SLAVE1_Initialize
+                  0x002df8                  _SLAVE1_Start
+                  0x002e00                  _SLAVE1_Program
+                  0x002e12                  _SLAVE1_InterruptRequestGenerate
+                  0x002e1a                  _SLAVE1_IsInterruptRequestAcknowledged
+                  0x002e30                  _SLAVE1_InterruptRequestComplete
+                  0x002e38                  _SLAVE1_IsInterruptRequested
+                  0x002e4e                  _SLAVE1_InterruptRequestAcknowledge
+                  0x002e56                  _SLAVE1_InterruptRequestAcknowledgeComplete
+                  0x002e5e                  _SLAVE1_GetResetCause
+                  0x002e7a                  _SLAVE1_ResetCauseClear
+                  0x002e90                  _SLAVE1_SystemStatusGet
+                  0x002ed6                  _SLAVE1_Read
+                  0x002f0e                  _SLAVE1_Write
+                  0x002f48                  _SLAVE1_ProtocolAWrite
+                  0x002f80                  _SLAVE1_ProtocolBRead
+ .text            0x002fba        0x144 build/default/production/master_API/adc1.o
+                  0x002fba                  _ADC_ReadPercentage
+                  0x002ff0                  _ADC_Read10bit
+                  0x002ffe                  _ADC_Read12bit
+                  0x003054                  _ADC_Read12bitAverage
+                  0x0030a0                  _ADC_ChannelEnable
+                  0x0030c2                  _ADC_SetConfiguration
+ .text            0x0030fe        0x114 build/default/production/mcc_generated_files/reset.o
+                  0x0030fe                  _RESET_GetCause
+                  0x003106                  _RESET_CauseHandler
+                  0x00320a                  _RESET_CauseClearAll
 
-.dinit            0x0031c2         0xce
- .dinit           0x0031c2         0xce data_init
+.dinit            0x003212         0xce
+ .dinit           0x003212         0xce data_init
 
-.text             0x003290        0x21e
- .text            0x003290         0x94 build/default/production/main.o
-                  0x003290                  _main
- .text            0x003324         0x52 build/default/production/mcc_generated_files/pin_manager.o
-                  0x003324                  _PIN_MANAGER_Initialize
- .text            0x003376         0x44 build/default/production/mcc_generated_files/clock.o
-                  0x003376                  _CLOCK_Initialize
- .text            0x0033ba         0x40 build/default/production/master_API/uart1.o
-                  0x0033ba                  _UART1_Initialize
-                  0x0033e4                  _UART1_Write
- .text            0x0033fa         0x3e build/default/production/mcc_generated_files/system.o
-                  0x003418                  _SYSTEM_Initialize
- .text            0x003438         0x20 build/default/production/mcc_generated_files/mcc.o
-                  0x003438                  _OSCILLATOR_Initialize
-                  0x003440                  _SYSTEM_GetResetCause
-                  0x003448                  _SYSTEM_ResetCauseHandler
-                  0x003450                  _SYSTEM_ResetCauseClearAll
- .text            0x003458         0x1c build/default/production/master_API/init_master_api.o
-                  0x003458                  _init_master_api
- .text            0x003474         0x18 build/default/production/mcc_generated_files/ext_int.o
-                  0x003474                  _EX_INT0_CallBack
-                  0x003480                  _EXT_INT_Initialize
- .text            0x00348c         0x16 build/default/production/mcc_generated_files/traps.o
-                  0x00348c                  _TRAPS_halt_on_error
- .text            0x0034a2          0xc build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x0034a2                  _INTERRUPT_Initialize
+.text             0x0032e0        0x21e
+ .text            0x0032e0         0x94 build/default/production/main.o
+                  0x0032e0                  _main
+ .text            0x003374         0x52 build/default/production/mcc_generated_files/pin_manager.o
+                  0x003374                  _PIN_MANAGER_Initialize
+ .text            0x0033c6         0x44 build/default/production/mcc_generated_files/clock.o
+                  0x0033c6                  _CLOCK_Initialize
+ .text            0x00340a         0x40 build/default/production/master_API/uart1.o
+                  0x00340a                  _UART1_Initialize
+                  0x003434                  _UART1_Write
+ .text            0x00344a         0x3e build/default/production/mcc_generated_files/system.o
+                  0x003468                  _SYSTEM_Initialize
+ .text            0x003488         0x20 build/default/production/mcc_generated_files/mcc.o
+                  0x003488                  _OSCILLATOR_Initialize
+                  0x003490                  _SYSTEM_GetResetCause
+                  0x003498                  _SYSTEM_ResetCauseHandler
+                  0x0034a0                  _SYSTEM_ResetCauseClearAll
+ .text            0x0034a8         0x1c build/default/production/master_API/init_master_api.o
+                  0x0034a8                  _init_master_api
+ .text            0x0034c4         0x18 build/default/production/mcc_generated_files/ext_int.o
+                  0x0034c4                  _EX_INT0_CallBack
+                  0x0034d0                  _EXT_INT_Initialize
+ .text            0x0034dc         0x16 build/default/production/mcc_generated_files/traps.o
+                  0x0034dc                  _TRAPS_halt_on_error
+ .text            0x0034f2          0xc build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0034f2                  _INTERRUPT_Initialize

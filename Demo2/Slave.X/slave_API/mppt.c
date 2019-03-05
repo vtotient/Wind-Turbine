@@ -74,8 +74,8 @@ uint16_t mppt(void){
 	int32_t deltaP;
 	uint16_t debug;
 
-	// v.k 	= ADC_Read12bitAverage(SENSOR_1, 40);
-	// i   	= ADC_Read12bitAverage(SENSOR_5, 40);
+	v.k 	= ADC_Read12bitAverage(SENSOR_1, 40);
+	i   	= 1; //ADC_Read12bitAverage(SENSOR_5, 40);
 
 	p.k 	= v.k * i; 
 	deltaP 	= p.k - p.k_1;

@@ -22,21 +22,21 @@ int main(void)
 
     while (1){
 
-        //if(debug == 0){
-        dataSend.ProtocolB[0] = ADC_ReadPercentage(SENSOR_1);
-        // }
-        // else if(debug == 11){
-        //      dataSend.ProtocolB[0] = 11;
-        // }
-        // else if(debug == 22){
-        //      dataSend.ProtocolB[0] = 22;
-        // }
-        // else if(debug == 33)
-        //     dataSend.ProtocolB[0] = 33;
-        // else if(debug == 44)
-        //     dataSend.ProtocolB[0] = 33;
-        // else
-        //     dataSend.ProtocolB[0] = 55;
+        if(debug == 0){
+            dataSend.ProtocolB[0] = ADC_ReadPercentage(SENSOR_5);
+        }
+        else if(debug == 11){
+             dataSend.ProtocolB[0] = 11;
+        }
+        else if(debug == 22){
+             dataSend.ProtocolB[0] = 22;
+        }
+        else if(debug == 33)
+            dataSend.ProtocolB[0] = 33;
+        else if(debug == 44)
+            dataSend.ProtocolB[0] = 33;
+        else
+            dataSend.ProtocolB[0] = 55;
 
         /* Mailbox write */
         MASTER_ProtocolBWrite((ProtocolB_DATA*)&dataSend);
@@ -48,7 +48,7 @@ int main(void)
         while(MASTER_IsInterruptRequestAcknowledged());
 
         /* Duty Cycle for boost convertor */
-        //debug = mppt();
+        debug = mppt();
 
     }
 
