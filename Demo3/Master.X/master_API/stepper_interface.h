@@ -67,5 +67,6 @@ void wind_sensor_calibrate(void);
 bool track_wind(void);
 void spin_clockwise(void);
 void spin_counterclockwise(void);
+uint16_t return_zero(void);
 
 #endif

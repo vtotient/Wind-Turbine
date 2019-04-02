@@ -60,7 +60,17 @@
 #endif
 
 #define TMR1_INTERRUPT_TICKER_FACTOR    1
+#define TMAX 100
 
+/* PI Controller Constatants */
+#define Kp 0.278736955372526
+#define Ti 169.0830413
+#define Ts 0.1
+
+/* Put Microcontroller into Data Aquistion Mode by uncommenting */
+// #define DATA_AQUISITON
+
+int16_t track_wind_pi(void);
 /**
   Section: Interface Routines
 */

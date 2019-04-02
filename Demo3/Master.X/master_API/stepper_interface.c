@@ -1,4 +1,4 @@
- /*
+  /*
  * File:		stepper_interface.c
  * Purpose:	Interface with the stepper motor
  */
@@ -10,6 +10,10 @@ FLAGS flags;
 /* Global Variables */
 
 volatile uint16_t zero = 0; // Initialize to know value
+
+uint16_t return_zero(void){
+    return zero;
+}
 
 /* 
  * Initialize the stepper motor.

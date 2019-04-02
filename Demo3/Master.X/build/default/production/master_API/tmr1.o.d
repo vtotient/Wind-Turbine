@@ -1,8 +1,10 @@
 build/default/production/master_API/tmr1.o:  \
 master_API/tmr1.c  \
  master_API/tmr1.h  \
-master_API/stepper_interface.h  \
- master_API/../mcc_generated_files/mcc.h  \
+master_API/master_API.h  \
+master_API/uart1.h  \
+ master_API/stepper_interface.h  \
+master_API/../mcc_generated_files/mcc.h  \
  master_API/../mcc_generated_files/reset.h  \
  master_API/../mcc_generated_files/reset_types.h  \
  master_API/../mcc_generated_files/system.h  \
@@ -17,4 +19,5 @@ master_API/stepper_interface.h  \
  master_API/../mcc_generated_files/ext_int.h  \
  master_API/../mcc_generated_files/pwm.h  \
 master_API/adc1.h  \
- master_API/pwm_interface.h 
+ master_API/pwm_interface.h  \
+master_API/init_master_api.h 

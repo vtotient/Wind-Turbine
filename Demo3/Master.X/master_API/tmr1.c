@@ -48,13 +48,17 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "tmr1.h"
-#ifndef STEPPER_INTERFACE_H
-    #include "stepper_interface.h"
+#ifndef MASTER_API_H
+    #include "master_API.h"
 #endif
 
-/* Timer counter */
-uint16_t counter = 0;
+/* For ISR */
+uint16_t cnt = 0;
+int16_t duty_cyle = 0;
+int16_t error[2] = {0,0};
+int16_t integral[2] = {0,0};
 
 /**
  Section: File specific functions
@@ -162,29 +166,90 @@ uint16_t TMR1_Counter16BitGet( void )
     return( TMR1 );
 }
 
+/*
+ * Timer interrupt Callback. Exectutes the stepper motor PI Algorithm
+ *
+ * RETURN:  NULL
+ *
+ * PRE:     1ms Interrupt rate as definied by settling time
+ *
+ * POST:    System returns to main exe
+ */
 
 void __attribute__ ((weak)) TMR1_CallBack(void) 
 {
-    LATEbits.LATE0 ^= 1;
 
-    // if(ADC_ReadPercentage(SENSOR_1)<50){
-    //     track_wind();
-    //     LATEbits.LATE1 = 0;
-    // }
-    // else{
-    //     stop_stepper();
-    //     LATEbits.LATE1 = 1;
-    // }
+    /* Normal Mode */
+    #ifndef DATA_AQUISTION
+        duty_cyle = 100 * track_wind_pi();
 
+        if(cnt <= abs(duty_cyle)){
+            if(duty_cyle < 0){
+                spin_clockwise();
+                LATEbits.LATE1 ^= 1;
+            }
+            else{
+                spin_counterclockwise();
+                LATEbits.LATE1 ^= 1;
+            }
+        }
+        else{
+            stop_stepper();
+        }
 
-    if( wind_tracker_pi() == counter ){
+        if(cnt == TMAX){
+            cnt = 0;
+        }
+        else{
+            cnt++;
+        }
 
-    }
-    else{
-        counter++;
-    }
+    /* Aquiring Data Mode */
+    #else
+        LATEbits.LATE0 ^= 1;
 
+        if(ADC_ReadPercentage(SENSOR_1)<50){
+            track_wind();
+            LATEbits.LATE1 = 0;
+        }
+        else{
+            stop_stepper();
+            LATEbits.LATE1 = 1;
+        }
+    #endif
 
+}
+
+/*
+ * PI controller for the stepper motor
+ *
+ * RETURN:  DC value 
+ *
+ * PRE:     Timer1 initialized
+ *
+ * POST:    Speed of stepper adjusted according to PI controller equ
+ */
+
+int16_t track_wind_pi(void){
+    uint16_t current_pot_val = ADC_Read12bitAverage(WIND_SENSOR, 40);
+    uint16_t zero = return_zero();
+    double u;
+
+    /* Compute the error term as the relative angle of the wind sensor */
+    error[0] = zero - current_pot_val;
+
+    /* Compute the current integral term */
+    integral[0] = integral[1] + error[0];
+
+    /* Compute PI */
+    u = Kp * (error[0] + (1/Ti)*integral[0]);
+
+    /* Store for the next computation */
+    error[1] = error[0]; 
+    integral[1] = integral[0];
+
+    /* Cast the PI term to an int */
+    return (int16_t)u;
 }
 
 void  TMR1_SetInterruptHandler(void (* InterruptHandler)(void))
