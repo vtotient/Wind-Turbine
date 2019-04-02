@@ -21,8 +21,8 @@ int main(void)
     ADC_ChannelEnable(SENSOR_5);
 
     PWM_ModuleDisable(PWM_GENERATOR_5);
-    PWM_DutyCycleSet(PWM_GENERATOR_5, 0x006E);
-    //PWM_ModuleEnable(PWM_GENERATOR_5);
+    PWM_DutyCycleSet(PWM_GENERATOR_5, INIT_PER/2);
+    PWM_ModuleEnable(PWM_GENERATOR_5);
 
     /* For the mailboxes */
     ProtocolB_DATA dataSend; 
@@ -30,9 +30,9 @@ int main(void)
 
     while (1){
 
-        dataSend.ProtocolB[0] = ADC_Read12bitAverage(SENSOR_1, 40)/10; //mppt();
+        dataSend.ProtocolB[0] = PG5CONLbits.CLKSEL;//ADC_Read12bitAverage(SENSOR_1, 40)/10; //mppt();
 
-        /* Mailbox write */
+        // /* Mailbox write */
         MASTER_ProtocolBWrite((ProtocolB_DATA*)&dataSend);
         MASTER_InterruptRequestGenerate();
 
@@ -41,25 +41,18 @@ int main(void)
         MASTER_InterruptRequestComplete();
         while(MASTER_IsInterruptRequestAcknowledged());
 
-        /* Wait for boost converter to settle */
-        for(debug = 0; debug < 1; debug++)
-         asm(
-            "; Software delay \n"
-            "MOV #65535, W2 \n"
-            "loop:\n"
-            "SUB #1, W2 \n"
-            "BRA NZ, loop \n"
-            );
+        // /* Wait for boost converter to settle */
+        // for(debug = 0; debug < 1; debug++)
+        //  asm(
+        //     "; Software delay \n"
+        //     "MOV #65535, W2 \n"
+        //     "loop:\n"
+        //     "SUB #1, W2 \n"
+        //     "BRA NZ, loop \n"
+        //     );
 
-    //  /*DELETE THIS: Time the software delay*/
-    //     if(some_random_var){
-    //         PWM_ModuleDisable(PWM_GENERATOR_5);
-    //         some_random_var ^= 1;
-    //     }
-    //     else {
-    //         PWM_ModuleEnable(PWM_GENERATOR_5);
-    //         some_random_var ^= 1;
-    //     }
+        //mppt();
+
      }
 
     return 1; 

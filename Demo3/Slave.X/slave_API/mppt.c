@@ -50,8 +50,11 @@ void mppt_init(void){
 	p.k = 0;
 	p.k_1 = 0;
 
-	config_PWM(PWM_GENERATOR_5, INIT_DC, INIT_PHASE, INIT_PER);
 	PWM_ModuleDisable(PWM_GENERATOR_5);
+	PCLKCONbits.DIVSEL = 0;
+	PCLKCONbits.MCLKSEL = 0;
+	PG5CONLbits.CLKSEL = 1;
+	config_PWM(PWM_GENERATOR_5, INIT_DC, INIT_PHASE, INIT_PER);
     
     return;
 }

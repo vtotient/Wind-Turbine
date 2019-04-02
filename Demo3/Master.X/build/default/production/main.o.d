@@ -20,4 +20,5 @@ master_API/stepper_interface.h  \
 master_API/adc1.h  \
  master_API/pwm_interface.h  \
 master_API/init_master_api.h  \
- master_API/master_API.h 
+ master_API/master_API.h  \
+master_API/tmr1.h 

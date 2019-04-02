@@ -6,6 +6,8 @@
 #include "master_API/master_API.h"
 #pragma message "Connect USB-UART port on board to your PC and set COM port to: 9600 baud, 8-bit, 1 stop."
 
+#define MS_100 5000
+
 int main(void)
 {
 
@@ -51,7 +53,7 @@ int main(void)
         //     "BRA NZ, loop \n"
         //     );
 
-       // track_wind();
+       //track_wind();
     }
 
     return 1; 

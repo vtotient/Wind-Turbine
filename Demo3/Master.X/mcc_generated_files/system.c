@@ -54,13 +54,14 @@
 #include "interrupt_manager.h"
 #include "traps.h"
 #include "pwm.h"
-//#include "tmr1.h"
+#include "../master_API/tmr1.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
     CLOCK_Initialize();
     INTERRUPT_Initialize();
+    
     //TMR1_Initialize();
 
     SLAVE1_Initialize();

@@ -16,6 +16,7 @@
 #include "adc1.h"
 #include "pwm_interface.h"
 #include "init_master_api.h"
+#include "tmr1.h"
 #include "../mcc_generated_files/mcc.h"
 
 #endif

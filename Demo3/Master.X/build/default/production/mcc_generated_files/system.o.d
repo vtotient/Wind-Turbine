@@ -9,4 +9,5 @@ mcc_generated_files/ext_int.h  \
 mcc_generated_files/traps.h  \
  mcc_generated_files/slave_typedef.h  \
 mcc_generated_files/slave1.h  \
- mcc_generated_files/pwm.h 
+ mcc_generated_files/pwm.h  \
+mcc_generated_files/../master_API/tmr1.h 

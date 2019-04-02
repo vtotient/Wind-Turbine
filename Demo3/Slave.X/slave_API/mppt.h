@@ -15,9 +15,9 @@
 
 #define PERTUBATION 0x0005
 #define INIT_PHASE	0x0000
-#define INIT_PER	0x006E
+#define INIT_PER	0x7FFF
 #define INIT_DC		0x0000
-#define MAX_DC_VAL 	0x0058
+#define MAX_DC_VAL 	INIT_PER - 10
 #define MIN_DC_VAL  0x0000
 #define KP			0x0001
 #define KI 			0x0001
@@ -29,7 +29,7 @@
 typedef struct 
 {
 	uint16_t k;
-	uint16_t k_1;
+	uint16_t k_1; 
 } RAM_BLOCK;
 
 /* Store three contiguous 16-bit integers in memory */

@@ -11,6 +11,7 @@
         <itemPath>master_API/adc1.h</itemPath>
         <itemPath>master_API/uart1.h</itemPath>
         <itemPath>master_API/pwm_interface.h</itemPath>
+        <itemPath>master_API/tmr1.h</itemPath>
       </logicalFolder>
       <logicalFolder name="mcc_generated_files"
                      displayName="mcc_generated_files"
@@ -45,6 +46,7 @@
         <itemPath>master_API/stepper_interface.c</itemPath>
         <itemPath>master_API/uart_printf.c</itemPath>
         <itemPath>master_API/init_master_api.c</itemPath>
+        <itemPath>master_API/tmr1.c</itemPath>
       </logicalFolder>
       <logicalFolder name="mcc_generated_files"
                      displayName="mcc_generated_files"
@@ -80,7 +82,7 @@
         <targetDevice>dsPIC33CH128MP508</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.36</languageToolchainVersion>
         <platform>4</platform>

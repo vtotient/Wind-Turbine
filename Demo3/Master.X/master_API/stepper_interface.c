@@ -23,6 +23,7 @@ volatile uint16_t zero = 0; // Initialize to know value
 void init_stepper_interface(void){
 
     PWM_Initialize();
+   // stop_stepper();
     
     /* Set the clock divison ratio for PWM */
     CLK_RATIO     clk  = ONE_FOUR; 
