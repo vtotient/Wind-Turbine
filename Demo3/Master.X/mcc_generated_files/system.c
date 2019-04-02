@@ -62,7 +62,7 @@ void SYSTEM_Initialize(void)
     CLOCK_Initialize();
     INTERRUPT_Initialize();
     
-    TMR1_Initialize();
+    //TMR1_Initialize();
 
     SLAVE1_Initialize();
     EXT_INT_Initialize();

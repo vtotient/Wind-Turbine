@@ -37,12 +37,15 @@ int main(void)
 	    SLAVE1_ProtocolBRead((ProtocolB_DATA*)&dataReceive);
         
         /* Display Data on Screen */
-	     printf("\033[6;0f");
-	     printf("Data recieved from slave: %7u\r\n", dataReceive.ProtocolB[0]);
-         printf("External Interrupt Count: %7u\r\n", ext_int_cnt);
-         printf("Wind Sensor: %7u\r\n", ADC_Read12bitAverage(WIND_SENSOR, 40));
-         printf("Zero: %7u\r\n", zero);
-         printf("\r\n");
+        printf("\033[6;0f");
+        // printf("Data recieved from slave: %7u\r\n", dataReceive.ProtocolB[0]);
+        // printf("External Interrupt Count: %7u\r\n", ext_int_cnt);
+        printf("Wind Sensor: %7u\r\n", ADC_Read12bitAverage(WIND_SENSOR, 40));
+        printf("Zero: %7u\r\n", zero);
+        printf("DC: %7i\r\n", return_dc());
+        printf("Error(0): %7i\r\n", return_error());
+        printf("Error(1): %7i\r\n", return_integral());
+        printf("\r\n");
          // printf("%u\r\n", dataReceive.ProtocolB[0]);
         
         // asm(
@@ -53,7 +56,6 @@ int main(void)
         //     "BRA NZ, loop \n"
         //     );
 
-       //track_wind();
     }
 
     return 1; 

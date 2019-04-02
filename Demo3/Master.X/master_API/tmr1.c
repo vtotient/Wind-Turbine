@@ -55,10 +55,10 @@
 #endif
 
 /* For ISR */
-uint16_t cnt = 0;
-int16_t duty_cyle = 0;
-int16_t error[2] = {0,0};
-int16_t integral[2] = {0,0};
+volatile uint16_t cnt = 0;
+volatile int16_t duty_cyle = 0;
+volatile int16_t error[2] = {0,0};
+volatile int16_t integral[2] = {0,0};
 
 /**
  Section: File specific functions
@@ -66,6 +66,19 @@ int16_t integral[2] = {0,0};
 void (*TMR1_InterruptHandler)(void) = NULL;
 void TMR1_CallBack(void);
 
+
+int16_t return_dc(void){
+    return duty_cyle;
+}
+
+
+int16_t return_error(void){
+    return error[0];
+}
+
+int16_t return_integral(void){
+    return integral[0];
+}
 /**
   Section: Data Type Definitions
 */
@@ -103,7 +116,7 @@ void TMR1_Initialize (void)
     //TMR 0; 
     TMR1 = 0x00;
     //Period = 0.1 s; Frequency = 4000000 Hz; PR 50000; 
-    PR1 = 350;
+    PR1 = 250;
     //TCKPS 1:8; PRWIP Write complete; TMWIP Write complete; TON enabled; TSIDL disabled; TCS FOSC/2; TECS T1CK; TSYNC disabled; TMWDIS disabled; TGATE disabled; 
     T1CON = 0x8010;
 
@@ -178,46 +191,49 @@ uint16_t TMR1_Counter16BitGet( void )
 
 void __attribute__ ((weak)) TMR1_CallBack(void) 
 {
+    LATEbits.LATE0 ^= 1;
 
     /* Normal Mode */
-    #ifndef DATA_AQUISTION
-        duty_cyle = 100 * track_wind_pi();
-
-        if(cnt <= abs(duty_cyle)){
-            if(duty_cyle < 0){
-                spin_clockwise();
-                LATEbits.LATE1 ^= 1;
+   // #ifndef DATA_AQUISTION
+        if(ADC_ReadPercentage(SENSOR_1)<50){
+            duty_cyle = (int16_t)(50);//track_wind_pi());
+            if(cnt <= abs(duty_cyle)){
+                if(duty_cyle < 0){
+                    spin_clockwise();
+                    LATEbits.LATE1 = 1;
+                }
+                else{
+                    spin_counterclockwise();
+                    LATEbits.LATE1 = 1;
+                }
             }
             else{
-                spin_counterclockwise();
-                LATEbits.LATE1 ^= 1;
+                stop_stepper();
+                LATEbits.LATE1 = 0;
+            }
+
+            if(cnt == TMAX){
+                cnt = 0;
+            }
+            else{
+                cnt++;
             }
         }
         else{
-            stop_stepper();
-        }
-
-        if(cnt == TMAX){
-            cnt = 0;
-        }
-        else{
-            cnt++;
-        }
-
-    /* Aquiring Data Mode */
-    #else
-        LATEbits.LATE0 ^= 1;
-
-        if(ADC_ReadPercentage(SENSOR_1)<50){
-            track_wind();
             LATEbits.LATE1 = 0;
-        }
-        else{
             stop_stepper();
-            LATEbits.LATE1 = 1;
         }
-    #endif
-
+    // /* Aquiring Data Mode */
+    // #else
+    //     if(ADC_ReadPercentage(SENSOR_1)<50){
+    //         track_wind();
+    //         LATEbits.LATE1 = 0;
+    //     }
+    //     else{
+    //         stop_stepper();
+    //         LATEbits.LATE1 = 1;
+    //     }
+    // #endif
 }
 
 /*
@@ -238,18 +254,23 @@ int16_t track_wind_pi(void){
     /* Compute the error term as the relative angle of the wind sensor */
     error[0] = zero - current_pot_val;
 
+    if(abs(error[0]) < DEADZONE){
+        stop_stepper();
+        return 0;
+    }
+
     /* Compute the current integral term */
     integral[0] = integral[1] + error[0];
 
     /* Compute PI */
-    u = Kp * (error[0] + (1/Ti)*integral[0]);
+    u = .5;// Kp * (error[0] + (1/Ti)*integral[0]);
 
     /* Store for the next computation */
     error[1] = error[0]; 
     integral[1] = integral[0];
 
     /* Cast the PI term to an int */
-    return (int16_t)u;
+    return u;
 }
 
 void  TMR1_SetInterruptHandler(void (* InterruptHandler)(void))

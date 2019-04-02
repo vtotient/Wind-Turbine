@@ -23,7 +23,9 @@ void init_master_api(void){
     ADC_SetConfiguration(ADC_CONFIGURATION_DEFAULT);
     ADC_ChannelEnable(WIND_SENSOR);
 
+    /* Calibrate windsensor then start timer */
     init_stepper_interface();
+    TMR1_Initialize();
 
     SLAVE1_Program();
     SLAVE1_Start();

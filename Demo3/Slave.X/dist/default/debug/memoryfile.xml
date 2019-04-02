@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/debug/Slave.X.debug.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>4096</length>
+      <used>166</used>
+      <free>3930</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>23808</length>
+      <used>7710</used>
+      <free>16098</free>
+    </memory>
+  </executable>
+</project>
