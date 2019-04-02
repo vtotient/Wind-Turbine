@@ -51,7 +51,7 @@ int main(void)
         //     "BRA NZ, loop \n"
         //     );
 
-        //mppt();
+        mppt();
 
      }
 

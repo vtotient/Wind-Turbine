@@ -15,7 +15,7 @@
 
 #define PERTUBATION 0x0005
 #define INIT_PHASE	0x0000
-#define INIT_PER	0x7FFF
+#define INIT_PER	0x0025
 #define INIT_DC		0x0000
 #define MAX_DC_VAL 	INIT_PER - 10
 #define MIN_DC_VAL  0x0000

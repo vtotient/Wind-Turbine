@@ -53,6 +53,9 @@
     #include "stepper_interface.h"
 #endif
 
+/* Timer counter */
+uint16_t counter = 0;
+
 /**
  Section: File specific functions
 */
@@ -96,7 +99,7 @@ void TMR1_Initialize (void)
     //TMR 0; 
     TMR1 = 0x00;
     //Period = 0.1 s; Frequency = 4000000 Hz; PR 50000; 
-    PR1 = 0xC350;
+    PR1 = 350;
     //TCKPS 1:8; PRWIP Write complete; TMWIP Write complete; TON enabled; TSIDL disabled; TCS FOSC/2; TECS T1CK; TSYNC disabled; TMWDIS disabled; TGATE disabled; 
     T1CON = 0x8010;
 
@@ -163,15 +166,24 @@ uint16_t TMR1_Counter16BitGet( void )
 void __attribute__ ((weak)) TMR1_CallBack(void) 
 {
     LATEbits.LATE0 ^= 1;
-    
-    if(ADC_ReadPercentage(SENSOR_1)<50){
-        track_wind();
-        LATEbits.LATE1 = 0;
+
+    // if(ADC_ReadPercentage(SENSOR_1)<50){
+    //     track_wind();
+    //     LATEbits.LATE1 = 0;
+    // }
+    // else{
+    //     stop_stepper();
+    //     LATEbits.LATE1 = 1;
+    // }
+
+
+    if( wind_tracker_pi() == counter ){
+
     }
     else{
-        stop_stepper();
-        LATEbits.LATE1 = 1;
+        counter++;
     }
+
 
 }
 

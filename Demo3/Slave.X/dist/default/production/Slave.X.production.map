@@ -198,26 +198,26 @@ External Symbols in Program Memory (by address):
                   0x000e76                  _pid
                   0x000ef6                  _pidoptimal
                   0x000f1e                  _mppt_increase_dc
-                  0x000f4a                  _mppt_decrease_dc
-                  0x000f74                  _ADC_ReadPercentage
-                  0x000fc8                  _ADC_Read10bit
-                  0x000fd6                  _ADC_Read12bit
-                  0x00102c                  _ADC_Read12bitAverage
-                  0x001078                  _ADC_ChannelEnable
-                  0x0010bc                  _ADC_SetConfiguration
-                  0x0010f8                  _MASTER_Initialize
-                  0x001100                  _MASTER_InterruptRequestGenerate
-                  0x001108                  _MASTER_IsInterruptRequestAcknowledged
-                  0x00111e                  _MASTER_InterruptRequestComplete
-                  0x001126                  _MASTER_IsInterruptRequested
-                  0x00113c                  _MASTER_InterruptRequestAcknowledge
-                  0x001144                  _MASTER_InterruptRequestAcknowledgeComplete
-                  0x00114c                  _MASTER_SystemStatusGet
-                  0x001192                  _MASTER_Read
-                  0x0011cc                  _MASTER_Write
-                  0x001204                  _MASTER_ProtocolARead
-                  0x00123e                  _MASTER_ProtocolBWrite
-                  0x00137e                  _main
+                  0x000f48                  _mppt_decrease_dc
+                  0x000f72                  _ADC_ReadPercentage
+                  0x000fc6                  _ADC_Read10bit
+                  0x000fd4                  _ADC_Read12bit
+                  0x00102a                  _ADC_Read12bitAverage
+                  0x001076                  _ADC_ChannelEnable
+                  0x0010ba                  _ADC_SetConfiguration
+                  0x0010f6                  _MASTER_Initialize
+                  0x0010fe                  _MASTER_InterruptRequestGenerate
+                  0x001106                  _MASTER_IsInterruptRequestAcknowledged
+                  0x00111c                  _MASTER_InterruptRequestComplete
+                  0x001124                  _MASTER_IsInterruptRequested
+                  0x00113a                  _MASTER_InterruptRequestAcknowledge
+                  0x001142                  _MASTER_InterruptRequestAcknowledgeComplete
+                  0x00114a                  _MASTER_SystemStatusGet
+                  0x001190                  _MASTER_Read
+                  0x0011ca                  _MASTER_Write
+                  0x001202                  _MASTER_ProtocolARead
+                  0x00123c                  _MASTER_ProtocolBWrite
+                  0x00137c                  _main
                   0x0013ce                  _RESET_GetCause
                   0x0014da                  _RESET_CauseClearAll
                   0x0014e2                  _PIN_MANAGER_Initialize
@@ -230,26 +230,26 @@ External Symbols in Program Memory (by address):
 
 External Symbols in Program Memory (by name):
 
-                  0x001078                  _ADC_ChannelEnable
-                  0x000fc8                  _ADC_Read10bit
-                  0x000fd6                  _ADC_Read12bit
-                  0x00102c                  _ADC_Read12bitAverage
-                  0x000f74                  _ADC_ReadPercentage
-                  0x0010bc                  _ADC_SetConfiguration
+                  0x001076                  _ADC_ChannelEnable
+                  0x000fc6                  _ADC_Read10bit
+                  0x000fd4                  _ADC_Read12bit
+                  0x00102a                  _ADC_Read12bitAverage
+                  0x000f72                  _ADC_ReadPercentage
+                  0x0010ba                  _ADC_SetConfiguration
                   0x00153a                  _CLOCK_Initialize
                   0x001606                  _INTERRUPT_Initialize
-                  0x0010f8                  _MASTER_Initialize
-                  0x00113c                  _MASTER_InterruptRequestAcknowledge
-                  0x001144                  _MASTER_InterruptRequestAcknowledgeComplete
-                  0x00111e                  _MASTER_InterruptRequestComplete
-                  0x001100                  _MASTER_InterruptRequestGenerate
-                  0x001108                  _MASTER_IsInterruptRequestAcknowledged
-                  0x001126                  _MASTER_IsInterruptRequested
-                  0x001204                  _MASTER_ProtocolARead
-                  0x00123e                  _MASTER_ProtocolBWrite
-                  0x001192                  _MASTER_Read
-                  0x00114c                  _MASTER_SystemStatusGet
-                  0x0011cc                  _MASTER_Write
+                  0x0010f6                  _MASTER_Initialize
+                  0x00113a                  _MASTER_InterruptRequestAcknowledge
+                  0x001142                  _MASTER_InterruptRequestAcknowledgeComplete
+                  0x00111c                  _MASTER_InterruptRequestComplete
+                  0x0010fe                  _MASTER_InterruptRequestGenerate
+                  0x001106                  _MASTER_IsInterruptRequestAcknowledged
+                  0x001124                  _MASTER_IsInterruptRequested
+                  0x001202                  _MASTER_ProtocolARead
+                  0x00123c                  _MASTER_ProtocolBWrite
+                  0x001190                  _MASTER_Read
+                  0x00114a                  _MASTER_SystemStatusGet
+                  0x0011ca                  _MASTER_Write
                   0x0015d0                  _OSCILLATOR_Initialize
                   0x0014e2                  _PIN_MANAGER_Initialize
                   0x0005b4                  _PWM_Initialize
@@ -298,9 +298,9 @@ External Symbols in Program Memory (by name):
                   0x000200                  __resetPRI
                   0x000aa0                  _config_PWM
                   0x000bda                  _enable_PWM_CLK_DIV
-                  0x00137e                  _main
+                  0x00137c                  _main
                   0x000db4                  _mppt
-                  0x000f4a                  _mppt_decrease_dc
+                  0x000f48                  _mppt_decrease_dc
                   0x000f1e                  _mppt_increase_dc
                   0x000d7a                  _mppt_init
                   0x000e6e                  _mppt_pid
@@ -448,21 +448,21 @@ usercode
  .debug_abbrev    0x000c7a         0xc5 build/default/production/mcc_generated_files/pwm.o
  .debug_abbrev    0x000d3f         0x8a build/default/production/mcc_generated_files/interrupt_manager.o
 
-.debug_line       0x000000       0x11fb
+.debug_line       0x000000       0x11fc
  *(.debug_line)
- .debug_line      0x000000        0x1a0 build/default/production/main.o
- .debug_line      0x0001a0        0x142 build/default/production/slave_API/adc1.o
- .debug_line      0x0002e2        0x1e2 build/default/production/slave_API/mppt.o
- .debug_line      0x0004c4        0x214 build/default/production/slave_API/pwm_interface.o
- .debug_line      0x0006d8        0x155 build/default/production/mcc_generated_files/master.o
- .debug_line      0x00082d        0x123 build/default/production/mcc_generated_files/traps.o
- .debug_line      0x000950        0x13a build/default/production/mcc_generated_files/system.o
- .debug_line      0x000a8a         0xfe build/default/production/mcc_generated_files/clock.o
- .debug_line      0x000b88        0x13b build/default/production/mcc_generated_files/reset.o
- .debug_line      0x000cc3         0xf6 build/default/production/mcc_generated_files/mcc.o
- .debug_line      0x000db9        0x113 build/default/production/mcc_generated_files/pin_manager.o
- .debug_line      0x000ecc        0x234 build/default/production/mcc_generated_files/pwm.o
- .debug_line      0x001100         0xfb build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_line      0x000000        0x1a1 build/default/production/main.o
+ .debug_line      0x0001a1        0x142 build/default/production/slave_API/adc1.o
+ .debug_line      0x0002e3        0x1e2 build/default/production/slave_API/mppt.o
+ .debug_line      0x0004c5        0x214 build/default/production/slave_API/pwm_interface.o
+ .debug_line      0x0006d9        0x155 build/default/production/mcc_generated_files/master.o
+ .debug_line      0x00082e        0x123 build/default/production/mcc_generated_files/traps.o
+ .debug_line      0x000951        0x13a build/default/production/mcc_generated_files/system.o
+ .debug_line      0x000a8b         0xfe build/default/production/mcc_generated_files/clock.o
+ .debug_line      0x000b89        0x13b build/default/production/mcc_generated_files/reset.o
+ .debug_line      0x000cc4         0xf6 build/default/production/mcc_generated_files/mcc.o
+ .debug_line      0x000dba        0x113 build/default/production/mcc_generated_files/pin_manager.o
+ .debug_line      0x000ecd        0x234 build/default/production/mcc_generated_files/pwm.o
+ .debug_line      0x001101         0xfb build/default/production/mcc_generated_files/interrupt_manager.o
 
 .debug_frame      0x000000        0xb8a
  *(.debug_frame)
@@ -3005,7 +3005,7 @@ __c30_signature
                   0x000aa0                  _config_PWM
                   0x000bda                  _enable_PWM_CLK_DIV
                   0x000c5e                  _set_PWM_CLK_DIV
- .text            0x000c72        0x302 build/default/production/slave_API/mppt.o
+ .text            0x000c72        0x300 build/default/production/slave_API/mppt.o
                   0x000d7a                  _mppt_init
                   0x000db4                  _mppt
                   0x000e40                  _mppt_pid_init
@@ -3013,29 +3013,29 @@ __c30_signature
                   0x000e76                  _pid
                   0x000ef6                  _pidoptimal
                   0x000f1e                  _mppt_increase_dc
-                  0x000f4a                  _mppt_decrease_dc
- .text            0x000f74        0x184 build/default/production/slave_API/adc1.o
-                  0x000f74                  _ADC_ReadPercentage
-                  0x000fc8                  _ADC_Read10bit
-                  0x000fd6                  _ADC_Read12bit
-                  0x00102c                  _ADC_Read12bitAverage
-                  0x001078                  _ADC_ChannelEnable
-                  0x0010bc                  _ADC_SetConfiguration
- .text            0x0010f8        0x17e build/default/production/mcc_generated_files/master.o
-                  0x0010f8                  _MASTER_Initialize
-                  0x001100                  _MASTER_InterruptRequestGenerate
-                  0x001108                  _MASTER_IsInterruptRequestAcknowledged
-                  0x00111e                  _MASTER_InterruptRequestComplete
-                  0x001126                  _MASTER_IsInterruptRequested
-                  0x00113c                  _MASTER_InterruptRequestAcknowledge
-                  0x001144                  _MASTER_InterruptRequestAcknowledgeComplete
-                  0x00114c                  _MASTER_SystemStatusGet
-                  0x001192                  _MASTER_Read
-                  0x0011cc                  _MASTER_Write
-                  0x001204                  _MASTER_ProtocolARead
-                  0x00123e                  _MASTER_ProtocolBWrite
- .text            0x001276        0x158 build/default/production/main.o
-                  0x00137e                  _main
+                  0x000f48                  _mppt_decrease_dc
+ .text            0x000f72        0x184 build/default/production/slave_API/adc1.o
+                  0x000f72                  _ADC_ReadPercentage
+                  0x000fc6                  _ADC_Read10bit
+                  0x000fd4                  _ADC_Read12bit
+                  0x00102a                  _ADC_Read12bitAverage
+                  0x001076                  _ADC_ChannelEnable
+                  0x0010ba                  _ADC_SetConfiguration
+ .text            0x0010f6        0x17e build/default/production/mcc_generated_files/master.o
+                  0x0010f6                  _MASTER_Initialize
+                  0x0010fe                  _MASTER_InterruptRequestGenerate
+                  0x001106                  _MASTER_IsInterruptRequestAcknowledged
+                  0x00111c                  _MASTER_InterruptRequestComplete
+                  0x001124                  _MASTER_IsInterruptRequested
+                  0x00113a                  _MASTER_InterruptRequestAcknowledge
+                  0x001142                  _MASTER_InterruptRequestAcknowledgeComplete
+                  0x00114a                  _MASTER_SystemStatusGet
+                  0x001190                  _MASTER_Read
+                  0x0011ca                  _MASTER_Write
+                  0x001202                  _MASTER_ProtocolARead
+                  0x00123c                  _MASTER_ProtocolBWrite
+ .text            0x001274        0x15a build/default/production/main.o
+                  0x00137c                  _main
  .text            0x0013ce        0x114 build/default/production/mcc_generated_files/reset.o
                   0x0013ce                  _RESET_GetCause
                   0x0013d6                  _RESET_CauseHandler
