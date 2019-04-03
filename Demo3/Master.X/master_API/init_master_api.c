@@ -5,6 +5,11 @@
 
 #include "init_master_api.h"
 
+#ifndef GLOBAL_DC
+    #define GLOBAL_DC
+    volatile int16_t new_s_dc;
+#endif
+
 /*
  * Initializes the system. Must Initialize in presented order
  *
@@ -25,7 +30,6 @@ void init_master_api(void){
 
     /* Calibrate windsensor then start timer */
     init_stepper_interface();
-    TMR1_Initialize();
 
     SLAVE1_Program();
     SLAVE1_Start();

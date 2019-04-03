@@ -53,30 +53,21 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-
 #define TMR1_INTERRUPT_TICKER_FACTOR    1
-#define TMAX 100
-
-/* PI Controller Constatants */
-#define Kp 0.00105
-#define Ti 24.4
-#define Ts 0.001
-
 #define DEADZONE 75
 
-int16_t return_dc(void);
-double return_error(void);
-double return_integral(void);
+/* PI Coefficients */
+#define Kp 0.0001038173199
+#define Ti 14.2
 
-/* Put Microcontroller into Data Aquistion Mode by uncommenting */
-// #define DATA_AQUISITON
+/* Timing Parameters for the PI controller */
+#define SMAX 100
+#define SCOMPUTE (SMAX - 1)
+#define TINTERRUPT 0.005
+#define Ts 0.5
 
 double track_wind_pi(void);
+void compute_s_dc(void);
 /**
   Section: Interface Routines
 */

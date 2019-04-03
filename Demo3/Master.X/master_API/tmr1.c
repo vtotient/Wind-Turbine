@@ -56,11 +56,15 @@
 #endif
 
 /* For ISR */
-volatile uint16_t cnt = 0;
-volatile int16_t duty_cyle = 0;
+volatile uint16_t s = 0;            
 volatile double error[2] = {0,0};
 volatile double integral[2] = {0,0};
 volatile double u;
+
+/* Global variables */
+volatile uint16_t compute_dc_flag = 0;
+volatile uint16_t new_s_dc_flag = 0;
+volatile int16_t s_dc = 0;
 
 /**
  Section: File specific functions
@@ -68,19 +72,6 @@ volatile double u;
 void (*TMR1_InterruptHandler)(void) = NULL;
 void TMR1_CallBack(void);
 
-
-int16_t return_dc(void){
-    return duty_cyle;
-}
-
-
-double return_error(void){
-    return error[0];
-}
-
-double return_integral(void){
-    return integral[0];
-}
 /**
   Section: Data Type Definitions
 */
@@ -118,7 +109,7 @@ void TMR1_Initialize (void)
     //TMR 0; 
     TMR1 = 0x00;
     //Period = 0.1 s; Frequency = 4000000 Hz; PR 50000; 
-    PR1 = 1250;
+    PR1 = TINTERRUPT * 500000;
     //TCKPS 1:8; PRWIP Write complete; TMWIP Write complete; TON enabled; TSIDL disabled; TCS FOSC/2; TECS T1CK; TSYNC disabled; TMWDIS disabled; TGATE disabled; 
     T1CON = 0x8010;
 
@@ -193,54 +184,68 @@ uint16_t TMR1_Counter16BitGet( void )
 
 void __attribute__ ((weak)) TMR1_CallBack(void) 
 {
-    /* Normal Mode */
-   //#ifndef DATA_AQUISTION
-        LATEbits.LATE0 = 1;
-        if(ADC_ReadPercentage(SENSOR_1)<50){
+    LATEbits.LATE1 = 1;
+    if(ADC_ReadPercentage(SENSOR_1)<50){
 
-            duty_cyle = (int16_t)(100.0); //* track_wind_pi());
-
-            if(cnt < abs(duty_cyle)){
-                if(duty_cyle < 0){
-                    spin_clockwise();
-                    LATEbits.LATE1 = 1;
-                }
-                else{
-                    spin_counterclockwise();
-                    LATEbits.LATE1 = 1;
-                }
+        if(s <= abs(s_dc)){
+            if(s_dc < 0){
+                spin_clockwise();
             }
             else{
-                stop_stepper();
-                LATEbits.LATE1 = 0;
-            }
-
-            if(cnt == TMAX){
-                cnt = 0;
-            }
-            else{
-                cnt++;
+                spin_counterclockwise();
             }
         }
-
         else{
-            LATEbits.LATE1 = 0;
             stop_stepper();
         }
 
-        LATEbits.LATE0 = 0;
+        if(s == SMAX){
+            s = 0;
 
-    // /* Aquiring Data Mode */
-    // #else
-    //     if(ADC_ReadPercentage(SENSOR_1)<50){
-    //         track_wind();
-    //         LATEbits.LATE1 = 0;
-    //     }
-    //     else{
-    //         stop_stepper();
-    //         LATEbits.LATE1 = 1;
-    //     }
-    // #endif
+            if(new_s_dc_flag == 1){
+                /* Need to cast bc -1 < duty_cycle < 1 */
+                s_dc = new_s_dc;
+            }
+            else{
+                /* Error State */
+                LATEbits.LATE0 = 1;
+            }
+
+        }
+        else if(s == SCOMPUTE){
+            s++;
+            compute_dc_flag = 1;
+        }
+        else{
+            s++;
+        }
+    }
+
+    else{
+        stop_stepper();
+    }
+
+    LATEbits.LATE1 = 1;
+
+}
+
+/*
+ * Algorithm to time the PI computation
+ *
+ * RETURN:  DC value as a double
+ *
+ * PRE:     Timer1 initialized
+ *
+ * POST:    Speed of stepper adjusted according to PI controller equ
+ */
+void compute_s_dc(void){
+
+    if(compute_dc_flag == 1){
+        compute_dc_flag = 0;
+            new_s_dc = (int16_t)(SMAX * track_wind_pi());
+            new_s_dc_flag = 1;
+    }
+
 }
 
 /*
@@ -252,7 +257,6 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
  *
  * POST:    Speed of stepper adjusted according to PI controller equ
  */
-
 double track_wind_pi(void){
     uint16_t current_pot_val = ADC_Read12bitAverage(WIND_SENSOR, 40);
     uint16_t zero = return_zero();
