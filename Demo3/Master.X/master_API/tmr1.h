@@ -63,21 +63,20 @@
 #define TMAX 100
 
 /* PI Controller Constatants */
-#define Kp 0.27 //8736955372526
-#define Ti 169.083 //0413
-#define Ts 0.1
+#define Kp 0.00105
+#define Ti 24.4
+#define Ts 0.001
 
 #define DEADZONE 75
 
 int16_t return_dc(void);
-int16_t* return_data(void);
-int16_t return_error(void);
-int16_t return_integral(void);
+double return_error(void);
+double return_integral(void);
 
 /* Put Microcontroller into Data Aquistion Mode by uncommenting */
 // #define DATA_AQUISITON
 
-int16_t track_wind_pi(void);
+double track_wind_pi(void);
 /**
   Section: Interface Routines
 */

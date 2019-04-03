@@ -49,6 +49,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <libq.h>
 #include "tmr1.h"
 #ifndef MASTER_API_H
     #include "master_API.h"
@@ -57,8 +58,9 @@
 /* For ISR */
 volatile uint16_t cnt = 0;
 volatile int16_t duty_cyle = 0;
-volatile int16_t error[2] = {0,0};
-volatile int16_t integral[2] = {0,0};
+volatile double error[2] = {0,0};
+volatile double integral[2] = {0,0};
+volatile double u;
 
 /**
  Section: File specific functions
@@ -72,11 +74,11 @@ int16_t return_dc(void){
 }
 
 
-int16_t return_error(void){
+double return_error(void){
     return error[0];
 }
 
-int16_t return_integral(void){
+double return_integral(void){
     return integral[0];
 }
 /**
@@ -116,7 +118,7 @@ void TMR1_Initialize (void)
     //TMR 0; 
     TMR1 = 0x00;
     //Period = 0.1 s; Frequency = 4000000 Hz; PR 50000; 
-    PR1 = 250;
+    PR1 = 1250;
     //TCKPS 1:8; PRWIP Write complete; TMWIP Write complete; TON enabled; TSIDL disabled; TCS FOSC/2; TECS T1CK; TSYNC disabled; TMWDIS disabled; TGATE disabled; 
     T1CON = 0x8010;
 
@@ -191,13 +193,14 @@ uint16_t TMR1_Counter16BitGet( void )
 
 void __attribute__ ((weak)) TMR1_CallBack(void) 
 {
-    LATEbits.LATE0 ^= 1;
-
     /* Normal Mode */
-   // #ifndef DATA_AQUISTION
+   //#ifndef DATA_AQUISTION
+        LATEbits.LATE0 = 1;
         if(ADC_ReadPercentage(SENSOR_1)<50){
-            duty_cyle = (int16_t)(50);//track_wind_pi());
-            if(cnt <= abs(duty_cyle)){
+
+            duty_cyle = (int16_t)(100.0); //* track_wind_pi());
+
+            if(cnt < abs(duty_cyle)){
                 if(duty_cyle < 0){
                     spin_clockwise();
                     LATEbits.LATE1 = 1;
@@ -219,10 +222,14 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
                 cnt++;
             }
         }
+
         else{
             LATEbits.LATE1 = 0;
             stop_stepper();
         }
+
+        LATEbits.LATE0 = 0;
+
     // /* Aquiring Data Mode */
     // #else
     //     if(ADC_ReadPercentage(SENSOR_1)<50){
@@ -246,24 +253,25 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
  * POST:    Speed of stepper adjusted according to PI controller equ
  */
 
-int16_t track_wind_pi(void){
+double track_wind_pi(void){
     uint16_t current_pot_val = ADC_Read12bitAverage(WIND_SENSOR, 40);
     uint16_t zero = return_zero();
-    double u;
 
     /* Compute the error term as the relative angle of the wind sensor */
-    error[0] = zero - current_pot_val;
+    error[0] = (double)(zero) - (double)(current_pot_val);
 
-    if(abs(error[0]) < DEADZONE){
+    if(error[0] < DEADZONE && error[0] > -DEADZONE){
         stop_stepper();
-        return 0;
+        error[0], error[1] = 0.0, 0.0;
+        integral[0], integral[1] = 0.0, 0.0;
+        return 0.0;
     }
 
     /* Compute the current integral term */
     integral[0] = integral[1] + error[0];
 
     /* Compute PI */
-    u = .5;// Kp * (error[0] + (1/Ti)*integral[0]);
+    u = 0.0000568 * (error[0] + (1.0/9.74)*integral[0]);
 
     /* Store for the next computation */
     error[1] = error[0]; 

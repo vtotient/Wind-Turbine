@@ -17,7 +17,6 @@ limitations under the License.
 #include <p33CH128MP508.h>
 
 #include "uart1.h"
-//#include <stdio.h>
 
 #ifndef UART1_BAUD
 #warning "UART1_BAUD rate not defined. Setting to 9600."

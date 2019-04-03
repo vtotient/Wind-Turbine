@@ -4,6 +4,7 @@
  */
 
 #include "master_API/master_API.h"
+#include <stdlib.h>
 #pragma message "Connect USB-UART port on board to your PC and set COM port to: 9600 baud, 8-bit, 1 stop."
 
 #define MS_100 5000
@@ -39,14 +40,16 @@ int main(void)
         /* Display Data on Screen */
         printf("\033[6;0f");
         // printf("Data recieved from slave: %7u\r\n", dataReceive.ProtocolB[0]);
-        // printf("External Interrupt Count: %7u\r\n", ext_int_cnt);
+
         printf("Wind Sensor: %7u\r\n", ADC_Read12bitAverage(WIND_SENSOR, 40));
-        printf("Zero: %7u\r\n", zero);
-        printf("DC: %7i\r\n", return_dc());
-        printf("Error(0): %7i\r\n", return_error());
-        printf("Error(1): %7i\r\n", return_integral());
+        printf("Zero: %7u\r\n", return_zero());
+
+        printf("DC: %7lf\r\n", track_wind_pi());
+        printf("Error(0): %7f\r\n", return_error());
+        printf("Integral: %7f\r\n", return_integral());
+        printf("UART: %d\n", U1STAbits.OERR);
         printf("\r\n");
-         // printf("%u\r\n", dataReceive.ProtocolB[0]);
+
         
         // asm(
         //     "; Software delay \n"
