@@ -100,7 +100,7 @@ void wind_sensor_calibrate(void){
 bool track_wind(void){
     uint16_t current_pos = ADC_Read12bitAverage(WIND_SENSOR, 40);
 
-    if(current_pos >= zero - 75 && current_pos <= zero + 75){
+    if(current_pos >= zero - 120 && current_pos <= zero + 120){
         stop_stepper();
     }
     else if(current_pos > zero){

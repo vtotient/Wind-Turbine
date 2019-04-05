@@ -13,17 +13,19 @@
 #include "pwm_interface.h"
 #include "adc1.h"
 
-#define PERTUBATION 0x0005
+#define PERTUBATION 0x0005 
 #define INIT_PHASE	0x0000
-#define INIT_PER	0x0025
-#define INIT_DC		0x0000
-#define MAX_DC_VAL 	INIT_PER - 10
+#define INIT_PER	0x006e/2
+#define INIT_DC		0x006e/4
+#define MAX_DC_VAL 	INIT_PER - 20
 #define MIN_DC_VAL  0x0000
 #define KP			0x0001
 #define KI 			0x0001
 #define KD 			0x0000
 #define T 			1
 #define DEMO2
+#define MAX_VOLTAGE 3104
+#define MIN_VOLTAGE 2069
 
 /* Store two contiguous 16-bit integers in memory */
 typedef struct 
@@ -54,6 +56,6 @@ void mppt_increase_dc(void);
 void mppt_decrease_dc(void);
 void mppt_pid_init(void);
 uint16_t pidoptimal(void);
-uint16_t pid(void);
+void mppt_test(void);
 
 #endif

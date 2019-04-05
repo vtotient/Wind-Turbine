@@ -94,6 +94,13 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>../../../microchip/harmony/v2_06/bin/framework/math/libq/libq_mips32_mz_l.a</linkerLibFileItem>
+            <linkerLibFileItem>../../../microchip/harmony/v2_06/bin/framework/math/libq/LIBQ_C_Library.a</linkerLibFileItem>
+            <linkerLibFileItem>../../../microchip/harmony/v2_06/bin/framework/math/libq/libq_c_mips32_mx_l.a</linkerLibFileItem>
+            <linkerLibFileItem>../../../microchip/harmony/v2_06/bin/framework/math/libq/libq_c_mips32_mz_l.a</linkerLibFileItem>
+            <linkerLibFileItem>../../../microchip/harmony/v2_06/bin/framework/math/libq/LIBQ_C_mzef.a</linkerLibFileItem>
+            <linkerLibFileItem>../../../microchip/harmony/v2_06/bin/framework/math/libq/LIBQ_Library.X.a</linkerLibFileItem>
+            <linkerLibFileItem>/Applications/microchip/xc16/v1.36/lib/libq-elf.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -260,6 +267,32 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
+      <PKOBSKDEPlatformTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-15eff"/>
+        <property key="memories.userotp" value="true"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value=""/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges"
+                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.usehighvoltageonmclr" value="false"/>
+        <property key="programoptions.uselvpprogramming" value="true"/>
+      </PKOBSKDEPlatformTool>
       <pkob4hybrid>
         <property key="ADC" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>

@@ -55,8 +55,24 @@ void mppt_init(void){
 	PCLKCONbits.MCLKSEL = 0;
 	PG5CONLbits.CLKSEL = 1;
 	config_PWM(PWM_GENERATOR_5, INIT_DC, INIT_PHASE, INIT_PER);
+	PWM_ModuleEnable(PWM_GENERATOR_5);
     
     return;
+}
+
+/*
+ * For testing the timing of the mppt algorithm. Set the scope to trigger negedge on
+ * pin RD0. Scope the output voltage of boost. Should see that the voltage settles 
+ * before the falling edge of RD0
+ * 
+ * RETURN: 	NULL
+ * 
+ * PRE: 	RD0 is toggling every run through main
+ * 
+ * POST:	PG5DC is incremented by the perbutation amount
+ */
+void mppt_test(void){
+	mppt_increase_dc();
 }
 
 /*
@@ -65,7 +81,8 @@ void mppt_init(void){
  * the v, i, and p global variables as well as updates the duty cycle. Increasing the duty cycle
  * will result in a higher output voltage thus reducing the current drawn from the supply of the 
  * boost converter, which in this case is the generator. Decreasing the duty cycle, decreases 
- * the output voltage, increasing the current draw. 
+ * the output voltage, increasing the current draw. Also checks to ensure that the voltage is 
+ * within 10-15V.
  * 
  * RETURN:	NULL
  * 
@@ -73,6 +90,7 @@ void mppt_init(void){
  * 			exist and are RAM_BLOCKS and unint_16 respectively.
  *			SENSOR_1 => v
  *			SENSOR_2 => i
+ *			MAX_VOLTAGE and MIN_VOLTAGE have appropriate gain based on the sensors
  *
  * POST: 	Updates boost converter PWM duty cycle and updates the v, i, and p global variables
  */
@@ -80,37 +98,50 @@ uint16_t mppt(void){
 	int32_t deltaP;
 	uint16_t debug;
 
-	v.k 	= ADC_Read12bitAverage(SENSOR_1, 40)/10;
-	i   	= ADC_Read12bitAverage(SENSOR_5, 40)/100;
+	v.k 	= ADC_Read12bitAverage(SENSOR_1, 100);
+	i   	= 1;//ADC_Read12bitAverage(SENSOR_5, 40)/10;
 
 	p.k 	= (v.k * i); 
 	deltaP 	= p.k - p.k_1;
 
 	if(deltaP > 0){
-		if(v.k > v.k_1){
-			mppt_increase_dc();
-			debug = 11;
-		} 
-		else{
-			mppt_decrease_dc();
-			debug = 22;
-		}
+
+		//if(v.k < MAX_VOLTAGE || v.k > MIN_VOLTAGE){
+
+			if(v.k > v.k_1){
+				mppt_increase_dc();
+				debug = 11;
+			} 
+			else{
+				mppt_decrease_dc();
+				debug = 22;
+			}
+
+		//}
+
 	} 
 	else {
-		if(v.k > v.k_1){
-			mppt_decrease_dc();
-			debug = 33;
-		}
-		else{
-			mppt_increase_dc();
-			debug = 44;
-		}
+
+		//if(v.k < MAX_VOLTAGE || v.k > MIN_VOLTAGE){
+
+			if(v.k > v.k_1){
+				//mppt_decrease_dc();
+				mppt_increase_dc();
+				debug = 33;
+			}
+			else{
+				//mppt_increase_dc();
+				mppt_decrease_dc();
+				debug = 44;
+			}
+		//}
+
 	}
 
 	v.k_1 	= v.k;
 	p.k_1 	= p.k;
 
-	return p.k;
+	return v.k;
 }
 
 /* 
@@ -142,22 +173,6 @@ void mppt_pid_init(void){
  */
 uint16_t mppt_pid(void){
 	return PERTUBATION;
-	// return pidoptimal();
-	//return pid();
-}
-
-uint16_t pid(void){
-	double tmp;
-
-	pid_err.k = Vref - PG5DC;
-
-	PIDTERM += pid_constant.k_2 * pid_err.k_2 + pid_constant.k_1 * pid_err.k_1 + pid_constant.k *pid_err.k;
-
-	tmp = pid_err.k_1;
-	pid_err.k_1 = pid_err.k;
-	pid_err.k_2 = tmp;
-
-	return (uint16_t)PIDTERM; 
 }
 
 /*
@@ -245,7 +260,7 @@ void mppt_decrease_dc(void){
 	duty_cycle = PG5DC; 
 
 	/* Prevent underflow of duty cycle */
-	if(duty_cycle - mppt_pid() >= duty_cycle){
+	if(duty_cycle - mppt_pid() <= MIN_DC_VAL){
 		duty_cycle = MIN_DC_VAL;
 	}
 	else{ 

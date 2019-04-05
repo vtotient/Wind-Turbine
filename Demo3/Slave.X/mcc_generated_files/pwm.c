@@ -505,7 +505,7 @@ void PWM_Initialize (void)
     // HREN disabled; MODSEL Independent Edge; TRGCNT 1; CLKSEL Master clock; ON enabled; 
     PG3CONL = 0x8008;
     // HREN disabled; MODSEL Independent Edge; TRGCNT 1; CLKSEL Master clock; ON enabled; 
-    PG4CONL = 0x8008;
+    PG4CONL = 0x0008;
     // HREN disabled; MODSEL Independent Edge; TRGCNT 1; CLKSEL Master clock; ON enabled; 
     PG5CONL = 0x8008;
     // HREN disabled; MODSEL Independent Edge; TRGCNT 1; CLKSEL Master clock; ON enabled; 

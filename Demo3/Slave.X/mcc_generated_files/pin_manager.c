@@ -75,6 +75,7 @@ void PIN_MANAGER_Initialize (void)
     TRISD = 0xFF00;
     TRISE = 0xFFFF;
     TRISCbits.TRISC5 = 0;
+    TRISDbits.TRISD0 = 0;
 
     /****************************************************************************
      * Setting the Weak Pull Up and Weak Pull Down SFR(s)
@@ -105,7 +106,7 @@ void PIN_MANAGER_Initialize (void)
     ANSELA = 0x001E;
     ANSELB = 0x010F;
     ANSELC = 0x00EF;
-    ANSELD = 0x7C00;
+    ANSELD = 0x7C01;
     ANSELE = 0x0040;
 }
 

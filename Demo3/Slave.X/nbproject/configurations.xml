@@ -90,6 +90,8 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>/Applications/microchip/xc16/v1.36/lib/libpic30-elf.a</linkerLibFileItem>
+            <linkerLibFileItem>/Applications/microchip/xc16/v1.36/lib/libpic30-coff.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>

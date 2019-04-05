@@ -10,6 +10,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <libpic30.h>
 
 #include "pwm_interface.h"
 #include "adc1.h"
